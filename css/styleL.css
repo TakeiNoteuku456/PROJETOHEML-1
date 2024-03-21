@@ -14,6 +14,8 @@ body {
     border-radius: 10px;
     /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
     width: 300px;
+    flex-direction: column; /* Define o layout da flexbox como coluna */
+    align-items: center;    
 }
 .login-container input[type="text"],
 .login-container input[type="password"] {
@@ -45,7 +47,7 @@ body {
 
 .login-container img{ /* icone*/
     width: 130px;
-    border-radius: 50%;
+    border-radius: 100%;
     display: block;
     margin: 0 auto;
     padding: 10px;
@@ -56,31 +58,26 @@ body {
     padding: 50px;
     margin: -30px auto 0;
 }
+.login-container p {
+    margin-top: -20px;
+}
 
+.login-container p a {
+    color: #2e9ec3;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-left: 235px;
+    font-size: 12px;
+    position: relative;
+    top: -18px;
+}
 
+.login-container p a img {
+    margin-top: 10px;
+    width: 30px;
+}
 
 *{
     padding: 0;
     margin: 0;;
 }
-nav{
-    background-color: rgb(7, 103, 103) ;
-    width: 100%;
-    position: fixed;
-    top: 0;
-}
-ul{
-    list-style-type: nome;
-    padding: 10px;
-}
-ul li{
-    display: inline;
-    margin-right: 10px;
-}
-ul li a{
-    color: #fff;
-    text-decoration: nome;
-    text-transform: capitalize;
-}
-
-

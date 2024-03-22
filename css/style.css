@@ -14,9 +14,12 @@ nav{
     position: fixed;
     top: 0;
 }
+
+/*barrinha*/
 ul{
     list-style-type: nome;
-    padding: 10px;
+    padding: 20px;
+    
 }
 ul li{
     display: inline;
@@ -24,6 +27,18 @@ ul li{
 }
 ul li a{
     color: #fff;
-    text-decoration: nome;
+    text-decoration: none;
     text-transform: capitalize;
+    vertical-align: bottom; 
+    vertical-align: bottom; /* Alinha o texto à margem inferior */
+    
+}
+.imagem-redonda {
+    border-radius: 50%; /* Isso cria uma imagem redonda */
+    display: block; 
+    margin-left: 600px; 
+    margin-right: 600px; 
+    width: 100px; /* Defina a largura desejada */
+    /* ou */
+    height: 100px; /* Defina a altura desejada */
 }

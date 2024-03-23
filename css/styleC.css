@@ -69,12 +69,10 @@ body {
 }
 /* Remova a definição de tamanho da imagem do botão */
 .register-container p a img {
-    /* width: 30px; */ /* Remova esta linha */
-    /* height: auto; */ /* Remova esta linha */
-    color: #2e9ec3;
-    text-decoration: none;
-    text-transform: capitalize;
-    /* display: block; */ /* Remova esta linha */
-    /* margin: 10px auto 0; */ /* Remova esta linha */
+    margin-left: 120px;
     font-size: 12px;
+    position: relative;
+    top: -18px;
+    margin-top: 25px;
+    width: 40px;
 }

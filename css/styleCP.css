@@ -40,8 +40,18 @@ body {/* fundo */
     border-radius: 20px; 
     background-color: #99C6C8;
 }
-.register-container input[type="submit"] { /*botão login*/
+.register-container input[type="tel"]
+{/*textbox telefone*/
     width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border-radius: 20px; 
+    background-color: #99C6C8;
+}
+.register-container input[type="submit"] { /*botão cadastrar*/
+    width: 100px;
     padding: 10px;
     width: 80px;
     background-color: #2F98BC;
@@ -50,12 +60,12 @@ body {/* fundo */
     border-radius: 20px;
     cursor: pointer;
     display: block;
-    margin: 0 auto; 
+    margin: 15px auto 0; 
 }
 .register-container img{ /* icone*/
     display: block;
     margin: 0 auto;
-    padding: 10px;
+    padding: 55px;
     border-radius: 50%;
     width: 130px;
 }
@@ -70,4 +80,5 @@ body {/* fundo */
     margin-top: 25px;
     width: 40px;
     height: 100;
+    padding: 10px;
 }

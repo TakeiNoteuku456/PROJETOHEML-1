@@ -1,0 +1,80 @@
+#botao-img {
+    width: 30px; /* Largura desejada */
+    height: auto; /* Altura ajustada automaticamente para manter a proporção */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px; /* Ajuste o espaçamento conforme necessário */
+}
+h1 {
+    margin-left: 50px; /* Ajuste conforme necessário para garantir que o texto fique abaixo do botão */
+    margin-top: 40px; /* Ajuste conforme necessário para garantir que o texto fique abaixo do botão */
+}
+
+
+
+
+.flip-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaçamento entre o cabeçalho e os botões */
+    height: 600px; /* Defina uma altura para garantir o espaçamento entre os botões */
+}
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin-bottom: 20px; /* Espaçamento entre os cartões */
+}
+  
+  .title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {/*sim*/
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid #7abbbe;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {/*frente*/
+    background: linear-gradient(120deg, #6CB3B6 60%, #99C6C8 88%,
+    #6CB3B6 40%, #6CB3B6 48%);
+    color: white;
+  }
+  
+  .flip-card-back {/*atrás*/
+    background: linear-gradient(120deg, #6CB3B6 30%, #99C6C8 88%,
+    #6CB3B6 40%, #6CB3B6 78%);
+    color: white;
+    transform: rotateY(180deg);
+  }

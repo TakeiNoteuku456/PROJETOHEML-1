@@ -53,6 +53,8 @@ h1 {
   margin-left: 50px; /* Ajuste conforme necessário para garantir que o texto fique abaixo do botão */
 }
 
+
+
 /* Estilo para os cartões flip */
 .flip-card-container {
   display: flex; /* Cria um contêiner flexível para os cartões */

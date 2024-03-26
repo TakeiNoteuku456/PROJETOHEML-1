@@ -28,7 +28,7 @@
   width: 50px; /* Define a largura da imagem */
   height: 50px; /* Define a altura da imagem */
   display: block; /* Faz a imagem se comportar como um bloco */
-  margin: 5px auto 0; /* Centraliza horizontalmente a imagem e adiciona um pouco de margem superior */
+  margin: 15px auto 0; /* Centraliza horizontalmente a imagem e adiciona um pouco de margem superior */
 }
 #botao-img {
   width: 30px; /* Largura desejada */

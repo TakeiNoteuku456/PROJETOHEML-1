@@ -1,0 +1,51 @@
+body {/*fundo*/
+    font-family: Arial, sans-serif;
+    background-color: #99C6C8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.imagem-redonda {
+    border-radius: 50%; /* Isso cria uma imagem redonda */
+    display: block; 
+    margin-left: 600px; 
+    margin-right: 600px; 
+    width: 100px; /* Defina a largura desejada */
+    /* ou */
+    height: 100px; /* Defina a altura desejada */
+}
+
+.menu {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+  }
+  
+  .menu h1 {
+    margin-top: 20px; /* Adiciona margem acima do título */
+  }
+  
+  .menu img {
+    border-radius: 50%;
+    display: block; /* Faz a imagem se comportar como bloco */
+    margin: 20px auto; /* Centraliza a imagem horizontalmente */
+    width: 100px; /* Defina a largura desejada */
+    /* ou */
+    height: 100px; /* Defina a altura desejada */
+  }
+  
+  .menu .botoes {
+    text-align: center; /* Centraliza os botões horizontalmente */
+  }
+  
+  .menu button {
+    display: block; /* Faz com que os botões ocupem uma linha completa */
+  padding: 10px 20px; /* Adiciona espaçamento interno aos botões */
+  margin: 0 auto 10px; /* Adiciona margem abaixo dos botões */
+  background-color: #DDE0E8; /* Cor de fundo dos botões */
+  color: #99C6C8; /* Cor do texto dos botões */
+  border: none; /* Remove a borda dos botões */
+  cursor: pointer; /* Altera o cursor ao passar sobre os botões */
+  border-radius: 5px; /* Adiciona curvatura nas bordas dos botões */
+  }

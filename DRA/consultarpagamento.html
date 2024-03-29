@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Pagamento</title>
+    <link rel="stylesheet" href="css/styleCP.css">
+</head>
+<body>
+    <div class="container">
+        <img src="imagens/Icone.png" alt="Icone" class="imagem-redonda">
+        <h1>Consulta de Pagamento</h1>
+        <form class="payment-form" onsubmit="consultarPagamento(event)">
+            <label for="invoiceNumber">Número da Fatura:</label>
+            <input type="text" id="invoiceNumber" name="invoiceNumber" placeholder="Digite o número da fatura" required>
+            <label for="email">Seu Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            <button type="submit">Consultar</button>
+        </form>
+        <div class="payment-details" id="paymentDetails">
+            <!-- Aqui serão exibidos os detalhes do pagamento -->
+        </div>
+    </div>
 
+    <script src="js/scriptCP.js"></script>
+</body>
+</html>

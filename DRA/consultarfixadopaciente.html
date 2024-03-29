@@ -9,16 +9,20 @@
 </head>
 
 <body>
-    <form action="processar_cadastro.php" method="POST">
-        <input type="text" name="nome" placeholder="Nome Completo" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="tel" name="telefone" placeholder="Telefone" required><br>
-        <input type="text" name="cpf" placeholder="CPF" required><br>
-        <input type="text" name="endereco" placeholder="Endereço" required><br>
-        <input type="password" name="password" placeholder="Senha" required><br>
-        <input type="password" name="confirm_password" placeholder="Confirmar Senha" required><br>
-        <input type="submit" value="Cadastrar">
-    </form>
+
+        
+        <form id="loginForm">
+            <img src="imagens/Icone.png" alt="Icone" class="imagem-redonda"> <!-- Imagem adicionada aqui -->
+            <input type="text" id="username" placeholder="Nome de usuário" required><br>
+            <input type="password" id="password" placeholder="Senha" required><br>
+            <input type="submit" value="Entrar">
+        </form>
+
+        <div id="patientInfo" style="display: none;">
+            <!-- Aqui será exibida a ficha do paciente após o login -->
+        </div>
+    
+        <script src="js/scriptCFP.js"></script>
 </body>
 
 </html>

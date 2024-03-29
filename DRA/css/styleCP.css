@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #99C6C8;
+}
+
+.container {
+    background-color: #99C6C8;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centralizar o conteúdo horizontalmente */
+    margin-top: 50px; /* Ajustar a margem superior */
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px; /* Altere o valor conforme necessário */
+    margin-bottom: 20px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form label {
+    margin-bottom: 8px;
+}
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px; /* Ajuste o raio da borda conforme necessário */
+    box-sizing: border-box;
+    background-color: #99C6C8; /* Cor de fundo */
+    border: 2px solid black; /* Adicione este estilo de borda */
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #99C6C8; /* Cor de fundo */
+}
+.imagem-redonda {
+    border-radius: 50%; /* Criar uma borda circular */
+    width: 130px;
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+.payment-form button {
+    width: 40%;
+    padding: 10px;
+    background-color: #2F98BC;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto 0;
+}
+
+.payment-form button:hover {
+    background-color: #0056b3;
+}
+
+.payment-details {
+    margin-top: 20px;
+}

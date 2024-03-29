@@ -82,3 +82,7 @@ body {/* fundo */
     height: 100;
     padding: 10px;
 }
+/* Adicionando uma classe para ocultar a mensagem */
+.hidden {
+    display: none;
+}

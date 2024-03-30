@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agenda Pessoal</title>
+    <link rel="stylesheet" href="css/StyleAgenda.css"> <!-- Arquivo de estilo CSS -->
 </head>
 <body>
-    
+    <div class="agenda">
+        <img src="imagens/Icone.png" alt="Icone" class="imagem-redonda">
+        <div class="header">
+            <h1>Agenda Pessoal</h1>
+            <button id="addEvent">Adicionar Evento</button>
+        </div>
+        <div id="calendar">
+            <!-- Calendário será preenchido dinamicamente com JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal para adicionar/editar evento -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Novo Evento</h2>
+            <form id="eventForm">
+                <input type="hidden" id="eventId">
+                <label for="eventName">Nome do Evento:</label>
+                <input type="text" id="eventName" name="eventName" required><br><br>
+                <label for="eventDate">Data e Hora:</label>
+                <input type="datetime-local" id="eventDate" name="eventDate" required><br><br>
+                <button type="submit" id="saveEvent">Salvar</button>
+                <button type="button" id="deleteEvent">Excluir</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/Agenda.js"></script> <!-- Arquivo de script JavaScript -->
 </body>
 </html>

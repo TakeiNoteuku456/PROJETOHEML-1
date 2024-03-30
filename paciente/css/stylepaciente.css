@@ -1,12 +1,13 @@
 body {/*fundo*/
-    font-family: Arial, sans-serif;
-    background-color: #99C6C8;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #99C6C8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; /* Garante que a posição absoluta do botão seja relativa ao corpo da página */
 }
 .imagem-redonda {
     border-radius: 50%; /* Isso cria uma imagem redonda */
@@ -17,14 +18,16 @@ body {/*fundo*/
     /* ou */
     height: 100px; /* Defina a altura desejada */
 }
-
 .menu {
+  position: relative; /* Define a posição relativa para o contêiner do botão */
     text-align: center; /* Centraliza o conteúdo horizontalmente */
-  }
+    margin-bottom: 80px; /* Adiciona margem abaixo do menu */
+}
   
   .menu h1 {
     margin-top: 20px; /* Adiciona margem acima do título */
-  }
+    font-size: 18px; /* Define o tamanho da fonte do título */
+}
   
   .menu img {
     border-radius: 50%;
@@ -36,16 +39,61 @@ body {/*fundo*/
   }
   
   .menu .botoes {
+    margin-top: 20px; /* Adiciona margem acima do título */
     text-align: center; /* Centraliza os botões horizontalmente */
   }
   
   .menu button {
     display: block; /* Faz com que os botões ocupem uma linha completa */
   padding: 10px 20px; /* Adiciona espaçamento interno aos botões */
+  height: 50px; /* Define a altura desejada para os botões */
   margin: 0 auto 10px; /* Adiciona margem abaixo dos botões */
+  width: 200px; /* Define a largura desejada para os botões */
   background-color: #DDE0E8; /* Cor de fundo dos botões */
-  color: #99C6C8; /* Cor do texto dos botões */
+  color: black; /* Cor do texto dos botões */
   border: none; /* Remove a borda dos botões */
   cursor: pointer; /* Altera o cursor ao passar sobre os botões */
-  border-radius: 5px; /* Adiciona curvatura nas bordas dos botões */
+  border-radius: 50px; /* Adiciona curvatura nas bordas dos botões */
+  text-align: center; /* Centraliza o texto horizontalmente dentro dos botões */
+}
+  .menu .botoes button::after {
+    color: inherit; /* Mantém a cor do texto do pseudo-elemento igual à cor do texto do botão */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.botao-seta {
+    background-color: #DDE0E8; /* Cor de fundo do botão */
+    border: none; /* Remove a borda padrão */
+    color: white; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    position: relative; /* Permite posicionar a seta relativamente ao botão */
+    cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+    overflow: hidden; /* Garante que a seta não ultrapasse os limites do botão */
+    border-radius: 5px; /* Adiciona curvatura nas pontas do botão */
+  }
+  
+  .botao-seta::after {
+    content: ''; /* Adiciona conteúdo pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto para a seta */
+    top: 50%; /* Posiciona a seta no centro verticalmente */
+    right: 5px; /* Posiciona a seta 5px do lado direito */
+    width: 0; /* Largura da seta */
+    height: 0; /* Altura da seta */
+    border-top: 6px solid transparent; /* Define a parte superior da seta como transparente */
+    border-bottom: 6px solid transparent; /* Define a parte inferior da seta como transparente */
+    border-left: 10px solid #99C6C8; /* Define o lado esquerdo da seta como branco */
+    transform: translateY(-50%); /* Centraliza verticalmente a seta */
   }

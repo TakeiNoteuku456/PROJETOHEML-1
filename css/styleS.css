@@ -9,25 +9,20 @@
   padding: 0; /* Remove preenchimentos */
   z-index: 1000; /* Garante que o menu fique acima de outros elementos */
 }
+
 /* Estilo para a lista de itens do menu */
 .menu nav ul {
   list-style-type: none; /* Remove os marcadores de lista */
   padding: 0; /* Remove o preenchimento da lista */
   margin: 0; /* Remove as margens da lista */
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> ea7f860e6cdaed5a937a1014bf400cd343dd7f13
 /* Estilo para cada item da lista */
 .menu nav ul li {
   display: inline; /* Exibe os itens em linha */
   margin-right: 10px; /* Adiciona margem à direita para separar os itens */
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> ea7f860e6cdaed5a937a1014bf400cd343dd7f13
 /* Estilo para a imagem do menu */
 .imagem-redonda {
   border-radius: 50%; /* Cria uma forma de círculo para a imagem */
@@ -36,6 +31,7 @@
   display: block; /* Faz a imagem se comportar como um bloco */
   margin: 15px auto 0; /* Centraliza horizontalmente a imagem e adiciona um pouco de margem superior */
 }
+
 #botao-img {
   width: 30px; /* Largura desejada */
   height: auto; /* Altura ajustada automaticamente para manter a proporção */
@@ -44,53 +40,18 @@
   left: 10px; /* Distância da borda esquerda da janela de visualização */
   z-index: 1001; /* Garante que a imagem fique acima do menu */
 }
-<<<<<<< HEAD
+
+
 /* Estilo para o cabeçalho */
 header {
   padding: 20px; /* Adiciona preenchimento interno ao cabeçalho */
   text-align: center; /* Centraliza o texto dentro do cabeçalho */
 }
+
 /* Estilo para o título do cabeçalho */
 h1 {
   margin-top: 20px; /* Remove a margem superior padrão do título */
   margin-left: 0; /* Ajuste conforme necessário para garantir que o texto fique abaixo do botão */
-}
-/* Estilo para os cartões flip */
-.flip-card-container {
-  display: flex; /* Cria um contêiner flexível para os cartões */
-  flex-direction: column;; /* Permite que os cartões quebrem para a próxima linha */
-  justify-content: center; /* Centraliza horizontalmente os cartões */
-  align-items: center; /* Centraliza verticalmente os cartões */
-  gap: 20px; /* Espaçamento entre os cartões */
-  margin-top: 20px; /* Adiciona margem superior para separar os cartões do cabeçalho */
-}
-.flip-card-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* Espaçamento horizontal entre os cartões */
-}
-.flip-card {
-  background-color: transparent; /* Define a cor de fundo dos cartões */
-  width: 180px; /* Define a largura dos cartões */
-  height: 250px; /* Define a altura dos cartões */
-  perspective: 1000px; /* Define a perspectiva dos cartões */
-}
-=======
-
-
-/* Estilo para o cabeçalho */
-header {
-  background-color: #f0f0f0; /* Define a cor de fundo do cabeçalho */
-  padding: 20px; /* Adiciona preenchimento interno ao cabeçalho */
-  text-align: center; /* Centraliza o texto dentro do cabeçalho */
-}
-
-/* Estilo para o título do cabeçalho */
-h1 {
-  margin-top: 0; /* Remove a margem superior padrão do título */
-  margin-left: 50px; /* Ajuste conforme necessário para garantir que o texto fique abaixo do botão */
 }
 
 
@@ -102,17 +63,16 @@ h1 {
   justify-content: center; /* Centraliza horizontalmente os cartões */
   align-items: center; /* Centraliza verticalmente os cartões */
   gap: 20px; /* Espaçamento entre os cartões */
-  margin-top: 100px; /* Adiciona margem superior para separar os cartões do cabeçalho */
+  margin-top: 20px; /* Adiciona margem superior para separar os cartões do cabeçalho */
 }
 
 .flip-card {
   background-color: transparent; /* Define a cor de fundo dos cartões */
-  width: 190px; /* Define a largura dos cartões */
-  height: 254px; /* Define a altura dos cartões */
+  width: 180px; /* Define a largura dos cartões */
+  height: 250px; /* Define a altura dos cartões */
   perspective: 1000px; /* Define a perspectiva dos cartões */
 }
 
->>>>>>> ea7f860e6cdaed5a937a1014bf400cd343dd7f13
 .flip-card-inner {
   position: relative; /* Define a posição relativa do cartão interno */
   width: 100%; /* Define a largura do cartão interno */
@@ -121,17 +81,11 @@ h1 {
   transition: transform 0.8s; /* Adiciona uma transição suave ao girar o cartão */
   transform-style: preserve-3d; /* Mantém a perspectiva dos elementos filhos */
 }
-<<<<<<< HEAD
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg); /* Gira o cartão para a parte de trás quando o mouse passa sobre ele */
-}
-=======
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg); /* Gira o cartão para a parte de trás quando o mouse passa sobre ele */
 }
 
->>>>>>> ea7f860e6cdaed5a937a1014bf400cd343dd7f13
 .flip-card-front, .flip-card-back {
   box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2); /* Adiciona uma sombra aos cartões */
   position: absolute; /* Define a posição absoluta das faces dos cartões */
@@ -145,18 +99,12 @@ h1 {
   border: 1px solid #7abbbe; /* Adiciona uma borda aos cartões */
   border-radius: 1rem; /* Adiciona um raio de borda aos cartões */
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> ea7f860e6cdaed5a937a1014bf400cd343dd7f13
 .flip-card-front {
   background: linear-gradient(120deg, #6cb3b6 60%, #99c6c8 88%, #6cb3b6 40%, #6cb3b6 48%); /* Define um plano de fundo gradiente para a frente dos cartões */
   color: white; /* Define a cor do texto */
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> ea7f860e6cdaed5a937a1014bf400cd343dd7f13
 .flip-card-back {
   background: linear-gradient(120deg, #6cb3b6 30%, #99c6c8 88%, #6cb3b6 40%, #6cb3b6 78%); /* Define um plano de fundo gradiente para a parte traseira dos cartões */
   color: white; /* Define a cor do texto */

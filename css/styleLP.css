@@ -1,0 +1,85 @@
+body {/*fundo*/
+    font-family: Arial, sans-serif;
+    background-color: #99C6C8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {/*caixa*/
+    background-color: #99C6C8;
+    padding: 40px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+    width: 300px;
+    flex-direction: column; /* Define o layout da flexbox como coluna */
+    align-items: center;    
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {/*textbox*/
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* border: 1px solid #99C6C8; */
+    border-radius: 20px; 
+    box-sizing: border-box;
+    color: #000000;
+    background-color: #99C6C8;
+}
+.login-container input[type="submit"] {/*botão login*/
+    width: 100%;
+    padding: 10px;
+    width: 70px;
+    background-color: #2F98BC;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; 
+}
+.login-container input[type="submit"]:hover {/*quando colocar o mouse em cima*/
+    background-color: #2ca3ca;
+}
+
+.login-container img{ /* icone*/
+    width: 130px;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+.login-container input[type="image"] {/*botão voltar*/
+    width: 30px;
+    display: block;
+    padding: 50px;
+    margin: -30px auto 0;
+}
+.login-container p {/*cadastrar e imagem botão*/
+    margin-top: -20px;
+}
+
+.login-container p a {/*cadastrar*/
+    color: #2e9ec3;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-left: 235px;
+    font-size: 12px;
+    position: relative;
+    top: -18px;
+}
+
+.login-container p a img {/*imagem botão*/
+    margin-top: 10px;
+    width: 35px;
+}
+.container{
+    width: 10px;
+    margin: 0 100px;
+}
+*{
+    padding: 0;
+    margin: 0;;
+}

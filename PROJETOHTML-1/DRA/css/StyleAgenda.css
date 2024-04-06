@@ -1,0 +1,84 @@
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #99C6C8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo para a agenda */
+.agenda {
+    background-color: #99C6C8;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Estilo para a imagem redonda */
+.imagem-redonda {
+    display: block;
+    margin: -20px auto 30px; /* Adicionando margem superior negativa */
+    padding: 20px;
+    border-radius: 50%;
+    width: 130px;
+}
+
+/* Estilo para o cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo para os botões */
+button {
+    padding: 10px 20px;
+    background-color: #2F98BC;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2ca3ca;
+}
+
+/* Estilo para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

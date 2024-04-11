@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentistaMenu</title>
+    <link rel="stylesheet" href="css/StyleD.css">
+    <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">Adicionar Evento</button>
+
+    <div class="menu" id="menu">
+        <a href="EditarFichaP.html">Editar Ficha do Paciente</a>
+        <a href="#" class="Consulta">Adicionar Consulta</a>
+        <a href="EmitirReceita.html">Emitir Receita</a>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Adicionar Consulta</h2>
+        <form>
+            <label for="paciente">Nome do Paciente:</label>
+            <input type="text" id="paciente" name="paciente" required><br><br>
+            <label for="data">Data da Consulta:</label>
+            <input type="date" id="data" name="data" required><br><br>
+            <label for="hora">Hora da Consulta:</label>
+            <input type="time" id="hora" name="hora" required><br><br>
+            <label for="observacoes">Observações:</label><br>
+            <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea><br><br>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+
+    <script>
+        document.querySelector('.Consulta').addEventListener('click', function() {
+    var modal = document.getElementById('modal');
+    modal.style.display = 'block'; // Exibe o modal
+    });
+    </script>
+    <script>
+        // Função para fechar o modal
+        function closeModal() {
+            var modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

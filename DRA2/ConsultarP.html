@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas do Dia/Mês</title>
+    <link rel="stylesheet" href="css/styleCP.css">
+</head>
+<body>
+<main>
+    <section class="filtro">
+        <h2>Filtrar Consultas</h2>
+        <label for="tipoConsulta">Tipo de Consulta:</label>
+        <select id="tipoConsulta">
+            <option value="dia">Dia</option>
+            <option value="semana">Semana</option>
+            <option value="mes" selected>Mês</option>
+        </select>
+        <button onclick="filtrarConsultas()">Filtrar</button>
+    </section>
+
+    <section class="consultas">
+        <h2>Consultas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Preço</th>
+                    <th>Paciente</th>
+                    <th>Sala</th>
+                </tr>
+            </thead>
+            <tbody id="listaConsultas">
+                <!-- Consultas serão adicionadas dinamicamente aqui -->
+            </tbody>
+        </table>
+        <p class="total">Total: R$ <span id="totalReceber">0.00</span></p>
+    </section>
+</main>
+
+<script>
+    function filtrarConsultas() {
+        const tipoConsulta = document.getElementById('tipoConsulta').value;
+        const listaConsultas = document.getElementById('listaConsultas');
+        let totalReceber = 0;
+
+        // Limpar a lista de consultas
+        listaConsultas.innerHTML = '';
+
+        // Simulação de consultas
+        const consultas = getConsultas();
+
+        // Filtrar consultas com base no tipo selecionado
+        const dataAtual = new Date();
+        const anoAtual = dataAtual.getFullYear();
+        const mesAtual = dataAtual.getMonth() + 1;
+        const diaAtual = dataAtual.getDate();
+        const semanaAtual = getSemanaAtual();
+        
+        consultas.forEach(consulta => {
+            let consultaData = new Date(consulta.data);
+            let consultaAno = consultaData.getFullYear();
+            let consultaMes = consultaData.getMonth() + 1;
+            let consultaDia = consultaData.getDate();
+            let consultaSemana = getSemanaDaData(consultaData);
+
+            if ((tipoConsulta === 'dia' && consultaAno === anoAtual && consultaMes === mesAtual && consultaDia === diaAtual) ||
+                (tipoConsulta === 'semana' && consultaAno === anoAtual && consultaSemana === semanaAtual) ||
+                (tipoConsulta === 'mes' && consultaAno === anoAtual && consultaMes === mesAtual)) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${consulta.data}</td>
+                    <td>R$ ${consulta.preco.toFixed(2)}</td>
+                    <td>${consulta.paciente}</td>
+                    <td>${consulta.sala}</td>
+                `;
+                listaConsultas.appendChild(row);
+                totalReceber += consulta.preco;
+            }
+        });
+
+        // Exibir o total a receber
+        document.getElementById('totalReceber').textContent = totalReceber.toFixed(2);
+    }
+
+    function getConsultas() {
+        // Simulação de consultas
+        return [
+            { data: '2024-04-01', preco: 120.00, paciente: 'Maria Silva', sala: 'Sala 1' },
+            { data: '2024-04-02', preco: 100.00, paciente: 'João Oliveira', sala: 'Sala 2' },
+            { data: '2024-04-03', preco: 110.00, paciente: 'Ana Santos', sala: 'Sala 3' },
+            { data: '2024-04-04', preco: 130.00, paciente: 'Pedro Souza', sala: 'Sala 1' },
+            { data: '2024-04-05', preco: 90.00, paciente: 'Carla Pereira', sala: 'Sala 2' },
+            { data: '2024-04-06', preco: 100.00, paciente: 'Lucas Costa', sala: 'Sala 3' },
+            { data: '2024-04-07', preco: 120.00, paciente: 'Mariana Oliveira', sala: 'Sala 1' },
+            { data: '2024-04-08', preco: 110.00, paciente: 'Fernanda Silva', sala: 'Sala 2' },
+            { data: '2024-04-09', preco: 100.00, paciente: 'Gustavo Santos', sala: 'Sala 3' },
+            { data: '2024-04-10', preco: 130.00, paciente: 'Renata Souza', sala: 'Sala 1' },
+            { data: '2024-04-11', preco: 95.00, paciente: 'Roberto Pereira', sala: 'Sala 2' },
+            { data: '2024-04-12', preco: 115.00, paciente: 'Amanda Costa', sala: 'Sala 3' },
+            { data: '2024-04-13', preco: 120.00, paciente: 'Vanessa Oliveira', sala: 'Sala 1' },
+            { data: '2024-04-14', preco: 105.00, paciente: 'Ricardo Silva', sala: 'Sala 2' },
+            { data: '2024-04-15', preco: 100.00, paciente: 'Larissa Santos', sala: 'Sala 3' },
+            { data: '2024-04-16', preco: 130.00, paciente: 'Bruna Souza', sala: 'Sala 1' },
+            { data: '2024-04-17', preco: 90.00, paciente: 'Marcos Pereira', sala: 'Sala 2' },
+            { data: '2024-04-18', preco: 115.00, paciente: 'Tatiane Costa', sala: 'Sala 3' },
+            { data: '2024-04-19', preco: 120.00, paciente: 'Paulo Oliveira', sala: 'Sala 1' },
+            { data: '2024-04-20', preco: 100.00, paciente: 'Carolina Silva', sala: 'Sala 2' },
+            { data: '2024-04-21', preco: 110.00, paciente: 'Juliana Santos', sala: 'Sala 3' },
+            { data: '2024-04-22', preco: 130.00, paciente: 'Felipe Souza', sala: 'Sala 1' },
+            { data: '2024-04-23', preco: 95.00, paciente: 'Marcela Pereira', sala: 'Sala 2' },
+            { data: '2024-04-24', preco: 105.00, paciente: 'Rafael Costa', sala: 'Sala 3' },
+            { data: '2024-04-25', preco: 120.00, paciente: 'Camila Oliveira', sala: 'Sala 1' },
+            { data: '2024-04-26', preco: 100.00, paciente: 'Diego Silva', sala: 'Sala 2' },
+            { data: '2024-04-27', preco: 110.00, paciente: 'Vitória Santos', sala: 'Sala 3' },
+            { data: '2024-04-28', preco: 130.00, paciente: 'Eduardo Souza', sala: 'Sala 1' },
+            { data: '2024-04-29', preco: 90.00, paciente: 'Laura Pereira', sala: 'Sala 2' },
+            { data: '2024-04-30', preco: 120.00, paciente: 'Vinícius Costa', sala: 'Sala 3' },
+            // Exemplo para o mês de maio
+            { data: '2024-05-01', preco: 125.00, paciente: 'Gabriela Oliveira', sala: 'Sala 1' },
+            { data: '2024-05-02', preco: 95.00, paciente: 'Carlos Silva', sala: 'Sala 2' },
+            { data: '2024-05-03', preco: 115.00, paciente: 'Isabela Santos', sala: 'Sala 3' },
+            // Exemplo para o mês de junho
+            { data: '2024-06-01', preco: 130.00, paciente: 'Luciana Souza', sala: 'Sala 1' },
+            { data: '2024-06-02', preco: 100.00, paciente: 'André Pereira', sala: 'Sala 2' },
+            { data: '2024-06-03', preco: 110.00, paciente: 'Natália Costa', sala: 'Sala 3' },
+            { data: '2024-06-04', preco: 120.00, paciente: 'Henrique Oliveira', sala: 'Sala 1' },
+            { data: '2024-06-05', preco: 90.00, paciente: 'Elisa Silva', sala: 'Sala 2' },
+            { data: '2024-06-06', preco: 100.00, paciente: 'Rafaela Santos', sala: 'Sala 3' },
+            { data: '2024-06-07', preco: 120.00, paciente: 'Márcio Souza', sala: 'Sala 1' },
+            { data: '2024-06-08', preco: 110.00, paciente: 'Patrícia Pereira', sala: 'Sala 2' },
+            { data: '2024-06-09', preco: 100.00, paciente: 'Leandro Costa', sala: 'Sala 3' },
+            { data: '2024-06-10', preco: 130.00, paciente: 'Aline Oliveira', sala: 'Sala 1' },
+            { data: '2024-06-11', preco: 95.00, paciente: 'Robson Silva', sala: 'Sala 2' },
+            { data: '2024-06-12', preco: 105.00, paciente: 'Tainá Santos', sala: 'Sala 3' }
+        ];
+    }
+
+    function getSemanaAtual() {
+        const dataAtual = new Date();
+        const primeiroDiaDoAno = new Date(dataAtual.getFullYear(), 0, 1);
+        const milissegundosPorDia = 24 * 60 * 60 * 1000;
+        const diferenca = Math.floor((dataAtual - primeiroDiaDoAno) / milissegundosPorDia);
+        return Math.ceil((diferenca + primeiroDiaDoAno.getDay() + 1) / 7);
+    }
+
+    function getSemanaDaData(data) {
+        const primeiroDiaDoAno = new Date(data.getFullYear(), 0, 1);
+        const milissegundosPorDia = 24 * 60 * 60 * 1000;
+        const diferenca = Math.floor((data - primeiroDiaDoAno) / milissegundosPorDia);
+        return Math.ceil((diferenca + primeiroDiaDoAno.getDay() + 1) / 7);
+    }
+
+    // Filtra as consultas ao carregar a página
+    filtrarConsultas();
+</script>
+</body>
+</html>

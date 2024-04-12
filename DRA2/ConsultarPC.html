@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Pagamento da Clínica</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #99C6C8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #99c6c89d;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.filters input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #B0B0B0;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #2F98BC;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.consultas {
+    text-align: left;
+}
+
+.consulta {
+    background-color: #89b0b2;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.consulta p {
+    margin: 5px 0;
+}
+
+.total {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Consulta de Pagamento da Clínica</h1>
+
+        <div class="filters">
+            <label for="dia">Dia:</label>
+            <input type="date" id="dia" name="dia">
+            <button onclick="filtrarConsultas()" class="button">Filtrar</button>
+        </div>
+        
+        <div class="consultas" id="consultasContainer">
+            <!-- Consultas serão preenchidas dinamicamente aqui -->
+        </div>
+
+        <div class="total">
+            <p><strong>Total Recebido:</strong> <span id="totalRecebido">R$ 0,00</span></p>
+            <p><strong>Total de Consultas Realizadas:</strong> <span id="totalConsultas">0</span></p>
+            <p><strong>Média de Pagamento por Consulta:</strong> <span id="mediaPagamento">R$ 0,00</span></p>
+        </div>
+
+        <a href="PaginaAdministrador.html" class="button">Voltar</a>
+    </div>
+
+    <script>
+const consultasExemplo = [
+{ data: '2024-04-01', dentista: 'Dr. João', numConsultas: 10, pago: true, valorPorConsulta: 150 },
+    { data: '2024-04-01', dentista: 'Dra. Maria', numConsultas: 8, pago: true, valorPorConsulta: 180 },
+    { data: '2024-04-02', dentista: 'Dr. João', numConsultas: 12, pago: false, valorPorConsulta: 160 },
+    { data: '2024-04-03', dentista: 'Dr. Pedro', numConsultas: 15, pago: true, valorPorConsulta: 170 },
+    { data: '2024-04-04', dentista: 'Dr. João', numConsultas: 8, pago: true, valorPorConsulta: 140 },
+    { data: '2024-04-05', dentista: 'Dra. Maria', numConsultas: 10, pago: true, valorPorConsulta: 175 },
+    { data: '2024-04-06', dentista: 'Dr. João', numConsultas: 9, pago: true, valorPorConsulta: 165 },
+    { data: '2024-04-07', dentista: 'Dr. Pedro', numConsultas: 11, pago: false, valorPorConsulta: 155 },
+    { data: '2024-04-08', dentista: 'Dr. João', numConsultas: 14, pago: true, valorPorConsulta: 145 },
+    { data: '2024-04-09', dentista: 'Dra. Maria', numConsultas: 7, pago: true, valorPorConsulta: 185 },
+    { data: '2024-04-10', dentista: 'Dr. João', numConsultas: 13, pago: true, valorPorConsulta: 160 },
+    { data: '2024-04-11', dentista: 'Dr. Pedro', numConsultas: 8, pago: true, valorPorConsulta: 170 },
+    { data: '2024-04-12', dentista: 'Dr. João', numConsultas: 11, pago: false, valorPorConsulta: 175 },
+    { data: '2024-04-13', dentista: 'Dra. Maria', numConsultas: 10, pago: true, valorPorConsulta: 165 },
+    { data: '2024-04-14', dentista: 'Dr. João', numConsultas: 9, pago: true, valorPorConsulta: 155 },
+    { data: '2024-04-15', dentista: 'Dr. Pedro', numConsultas: 11, pago: false, valorPorConsulta: 145 },
+    { data: '2024-04-16', dentista: 'Dr. João', numConsultas: 14, pago: true, valorPorConsulta: 180 },
+    { data: '2024-04-17', dentista: 'Dra. Maria', numConsultas: 7, pago: true, valorPorConsulta: 170 },
+    { data: '2024-04-18', dentista: 'Dr. João', numConsultas: 13, pago: true, valorPorConsulta: 160 },
+    { data: '2024-04-19', dentista: 'Dr. Pedro', numConsultas: 8, pago: true, valorPorConsulta: 175 },
+    { data: '2024-04-20', dentista: 'Dr. João', numConsultas: 11, pago: false, valorPorConsulta: 165 },
+    { data: '2024-04-21', dentista: 'Dra. Maria', numConsultas: 10, pago: true, valorPorConsulta: 155 },
+    { data: '2024-04-22', dentista: 'Dr. João', numConsultas: 9, pago: true, valorPorConsulta: 145 },
+    { data: '2024-04-23', dentista: 'Dr. Pedro', numConsultas: 11, pago: false, valorPorConsulta: 135 },
+    { data: '2024-04-24', dentista: 'Dr. João', numConsultas: 14, pago: true, valorPorConsulta: 170 },
+    { data: '2024-04-25', dentista: 'Dra. Maria', numConsultas: 7, pago: true, valorPorConsulta: 160 },
+    { data: '2024-04-26', dentista: 'Dr. João', numConsultas: 13, pago: true, valorPorConsulta: 180 },
+    { data: '2024-04-27', dentista: 'Dr. Pedro', numConsultas: 8, pago: true, valorPorConsulta: 190 },
+    { data: '2024-04-28', dentista: 'Dr. João', numConsultas: 11, pago: false, valorPorConsulta: 195 },
+    { data: '2024-04-29', dentista: 'Dra. Maria', numConsultas: 10, pago: true, valorPorConsulta: 185 },
+    { data: '2024-04-30', dentista: 'Dr. João', numConsultas: 9, pago: true, valorPorConsulta: 175 },
+];
+
+function filtrarConsultas() {
+    const diaSelecionado = document.getElementById('dia').value;
+
+    const consultasFiltradas = consultasExemplo.filter(consulta => consulta.data === diaSelecionado);
+
+    const consultasContainer = document.getElementById('consultasContainer');
+    consultasContainer.innerHTML = '';
+
+    consultasFiltradas.forEach(consulta => {
+        const consultaElement = document.createElement('div');
+        consultaElement.classList.add('consulta');
+        consultaElement.innerHTML = `
+            <p><strong>Data:</strong> ${consulta.data}</p>
+            <p><strong>Dentista:</strong> ${consulta.dentista}</p>
+            <p><strong>Número de Consultas:</strong> ${consulta.numConsultas}</p>
+            <p><strong>Valor por Consulta:</strong> R$ ${consulta.valorPorConsulta.toFixed(2)}</p>
+            <p><strong>Pago:</strong> ${consulta.pago ? 'Sim' : 'Não'}</p>
+        `;
+        consultasContainer.appendChild(consultaElement);
+    });
+
+    const totalRecebido = calcularTotalRecebido(consultasFiltradas);
+    const totalConsultas = calcularTotalConsultas(consultasFiltradas);
+    const mediaPagamento = calcularMediaPagamento(totalRecebido, totalConsultas);
+
+    document.getElementById('totalRecebido').innerText = `R$ ${totalRecebido.toFixed(2)}`;
+    document.getElementById('totalConsultas').innerText = totalConsultas;
+    document.getElementById('mediaPagamento').innerText = `R$ ${mediaPagamento.toFixed(2)}`;
+}
+
+function calcularTotalRecebido(consultas) {
+    return consultas.reduce((total, consulta) => total + (consulta.pago ? consulta.numConsultas * consulta.valorPorConsulta : 0), 0);
+}
+
+function calcularTotalConsultas(consultas) {
+    return consultas.reduce((total, consulta) => total + consulta.numConsultas, 0);
+}
+
+function calcularMediaPagamento(totalRecebido, totalConsultas) {
+    return totalConsultas !== 0 ? totalRecebido / totalConsultas : 0;
+}
+    </script>
+</body>
+</html>

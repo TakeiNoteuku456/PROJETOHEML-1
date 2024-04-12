@@ -66,7 +66,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #99C6C8;
+    background-color: #2F98BC;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -89,8 +89,9 @@ body {
     font-weight: bold;
 }
 .botao-fechar {
-    padding: 10px 20px;
-    background-color: #2F98BC;
+    width: 40%;
+    padding: 10px;
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -111,7 +112,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #99C6C8;
+    background-color: #2F98BC;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -139,13 +140,13 @@ body {
     border: 1px solid black;
     font-size: 16px;
     box-sizing: border-box;
-    background-color: #99C6C8;
+    background-color: #fff;
 }
 
 .dropdown-content button {
     width: 40%;
     padding: 10px;
-    background-color: #2F98BC;
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -173,7 +174,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #99C6C8;
+    background-color: #2F98BC;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -209,3 +210,7 @@ body {
     padding: 5px;
     line-height: 1;
 }
+
+
+
+

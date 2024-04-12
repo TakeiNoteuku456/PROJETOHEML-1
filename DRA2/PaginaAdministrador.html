@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Administrador</title>
+    <link rel="stylesheet" href="css/StyleA.css">
+    <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">Adicionar Evento</button>
+
+    <div class="menu" id="menu">
+        <a href="#" onclick="mostrarQuadradoPaciente()">Consultar Ficha do Paciente</a>
+        <a href="#" onclick="mostrarMiniMenu()">Consultar Pagamento</a>
+        <a href="cadastrarfuncionario.html" onclick="">Cadastrar Funcionário</a>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+
+
+
+<script>
+function fecharMenuPagamento() {
+    document.getElementById('paymentDetails').style.display = 'none';
+}
+</script>
+
+
+
+
+
+<!-- Div para exibir o menu de colocar os dados do pagamento -->
+<div id="miniMenu" class="dropdown-content">
+    <form onsubmit="consultarPagamento(event)">
+        <label for="invoiceNumber">Número da Fatura:</label>
+        <input type="text" id="invoiceNumber" name="invoiceNumber" required><br>
+        <label for="email">Seu Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <button type="submit">Consultar</button>
+    </form>
+</div>
+<script>
+    function fecharMenuColocarDados() {
+        document.getElementById('miniMenu').style.display = 'none';
+    }
+</script>
+
+<!-- Quadrado com informações do paciente -->
+<div id="quadradoPaciente" class="quadrado-paciente">
+    <h2>Informações do Paciente</h2>
+    <p>Nome: João da Silva</p>
+    <p>Email: joao.silva@example.com</p>
+    <p>Telefone: (11) 99999-9999</p>
+    <p>Endereço: Rua das Flores, 123</p>
+    <button onclick="fecharQuadradoPaciente()">Fechar</button>
+</div>
+
+<script>
+    function mostrarQuadradoPaciente() {
+        var quadrado = document.getElementById('quadradoPaciente');
+        quadrado.style.display = 'block';
+    }
+
+    function fecharQuadradoPaciente() {
+        var quadrado = document.getElementById('quadradoPaciente');
+        quadrado.style.display = 'none';
+    }
+</script>
+
+
+
+
+
+<!-- Quadrado com informações do paciente -->
+<div id="quadradoPaciente" class="quadrado-paciente">
+    <h2>Informações do Paciente</h2>
+    <p>Nome: João da Silva</p>
+    <p>Email: joao.silva@example.com</p>
+    <p>Telefone: (11) 99999-9999</p>
+    <p>Endereço: Rua das Flores, 123</p>
+    <button onclick="fecharQuadradoPaciente()">Fechar</button>
+</div>
+
+<!-- Div para exibir os detalhes do pagamento -->
+<div id="paymentDetails" style="display: none;">
+    <button class="fechar-menu" onclick="fecharMenuPagamento()">X</button>
+    <h2>Detalhes do Pagamento</h2>
+    <p><strong>Número da Fatura:</strong> <span id="invoiceNumberDisplay"></span></p>
+    <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+    <p><strong>Valor:</strong> R$ <span id="amountDisplay"></span></p>
+    <p><strong>Data de Vencimento:</strong> <span id="dueDateDisplay"></span></p>
+    <p><strong>Status:</strong> <span id="statusDisplay"></span></p>
+</div>
+
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    }
+
+    function mostrarMiniMenu() {
+        var miniMenu = document.getElementById('miniMenu');
+        if (miniMenu.style.display === 'none') {
+            miniMenu.style.display = 'block';
+            // Oculta os detalhes do pagamento quando o menu mini é exibido
+            document.getElementById('paymentDetails').style.display = 'none';
+        } else {
+            miniMenu.style.display = 'none';
+        }
+    }
+
+    function consultarPagamento(event) {
+        event.preventDefault();
+        const invoiceNumber = document.getElementById('invoiceNumber').value;
+        const email = document.getElementById('email').value;
+        const paymentDetails = {
+            invoiceNumber: invoiceNumber,
+            email: email,
+            amount: 150.00,
+            dueDate: '2024-04-30',
+            status: 'Pago'
+        };
+        exibirDetalhesPagamento(paymentDetails);
+        // Oculta o menu de colocar os dados do pagamento após consultar
+        document.getElementById('miniMenu').style.display = 'none';
+    }
+
+    function exibirDetalhesPagamento(paymentDetails) {
+        document.getElementById('invoiceNumberDisplay').innerText = paymentDetails.invoiceNumber;
+        document.getElementById('emailDisplay').innerText = paymentDetails.email;
+        document.getElementById('amountDisplay').innerText = paymentDetails.amount.toFixed(2);
+        document.getElementById('dueDateDisplay').innerText = paymentDetails.dueDate;
+        document.getElementById('statusDisplay').innerText = paymentDetails.status;
+        document.getElementById('paymentDetails').style.display = 'block';
+    }
+
+    function fecharQuadradoPaciente() {
+        var quadrado = document.getElementById('quadradoPaciente');
+        quadrado.style.display = 'none';
+    }
+</script>
+</body>
+</html>

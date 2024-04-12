@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Recepcionista</title>
+    <link rel="stylesheet" href="css/StyleR.css">
+    <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
+</head>
+<body>
+    <button class="menu-toggle" onclick="toggleMenu()">Adicionar Evento</button>
+
+    <div class="menu" id="menu">
+        <a href="#" class="Consulta">Adicionar Consulta</a>
+        <a href="#" onclick="mostrarQuadradoReceita()">Visualizar Receita</a>
+        <a href="#" onclick="mostrarQuadradoPaciente()">Consultar Ficha do Paciente</a>
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+
+
+
+
+
+
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Adicionar Consulta</h2>
+        <form>
+            <label for="paciente">Nome do Paciente:</label>
+            <input type="text" id="paciente" name="paciente" required><br><br>
+            <label for="data">Data da Consulta:</label>
+            <input type="date" id="data" name="data" required><br><br>
+            <label for="hora">Hora da Consulta:</label>
+            <input type="time" id="hora" name="hora" required><br><br>
+            <label for="observacoes">Observações:</label><br>
+            <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea><br><br>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    }
+</script>
+
+<script>
+    document.querySelector('.Consulta').addEventListener('click', function() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'block'; // Exibe o modal
+    });
+
+    // Função para fechar o modal
+    function closeModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'none';
+    }
+</script>
+
+<!-- Quadrado com informações do paciente -->
+<div id="quadradoPaciente" class="quadrado-paciente">
+    <h2>Informações do Paciente</h2>
+    <p>Nome: João da Silva</p>
+    <p>Email: joao.silva@example.com</p>
+    <p>Telefone: (11) 99999-9999</p>
+    <p>Endereço: Rua das Flores, 123</p>
+    <button onclick="fecharQuadradoPaciente()">Fechar</button>
+</div>
+
+<script>
+    function mostrarQuadradoPaciente() {
+        var quadrado = document.getElementById('quadradoPaciente');
+        quadrado.style.display = 'block';
+    }
+
+    function fecharQuadradoPaciente() {
+        var quadrado = document.getElementById('quadradoPaciente');
+        quadrado.style.display = 'none';
+    }
+</script>
+
+<!-- Quadrado com a receita -->
+<div id="quadradoReceita" class="quadrado-receita">
+    <h2>Receita Médica</h2>
+    <p>Medicamento: Nome do Medicamento</p>
+    <p>Dosagem: 10mg</p>
+    <p>Frequência: 1 vez ao dia</p>
+    <button onclick="fecharQuadradoReceita()">Fechar</button>
+</div>
+
+<script>
+    function mostrarQuadradoReceita() {
+        var quadrado = document.getElementById('quadradoReceita');
+        quadrado.style.display = 'block';
+    }
+
+    function fecharQuadradoReceita() {
+        var quadrado = document.getElementById('quadradoReceita');
+        quadrado.style.display = 'none';
+    }
+</script>
+
+
+
+</body>
+</html>

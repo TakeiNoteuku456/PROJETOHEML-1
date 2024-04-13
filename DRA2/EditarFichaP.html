@@ -5,30 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Ficha do Paciente</title>
-    <link rel="stylesheet" href="css/styleEditar.css"> <!-- Arquivo CSS de estilos -->
-    <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styleEditar.css">
 </head>
 
 <body>
     <div class="container">
-        <img src="../imagens/Icone.png" alt="Icone" class="imagem-redonda">
         <h1>Editar Ficha do Paciente</h1>
         <form class="patient-form">
-            <label for="nome">Nome Completo:</label>
-            <input type="text" id="nome" name="nome" value="João da Silva">
+            <label for="tratamento">Tratamento Feito:</label>
+            <input type="text" id="tratamento" name="tratamento" value="Limpeza de Canal">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="joao.silva@example.com">
+            <label for="dataRealizacao">Data da Realização:</label>
+            <input type="date" id="dataRealizacao" name="dataRealizacao" value="2024-04-15">
 
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" value="(11) 99999-9999">
+            <label for="dentistaResponsavel">Dentista Responsável:</label>
+            <input type="text" id="dentistaResponsavel" name="dentistaResponsavel" value="Dr. João">
 
-            <label for="endereço">Endereço:</label>
-            <input type="text" id="endereço" name="endereço" value="Rua das Flores, 123">
-            
             <button type="submit">Salvar Alterações</button>
+            <button type="button" onclick="emitirReceita()">Emitir Receita</button> <!-- Adicionei o tipo "button" -->
         </form>
     </div>
+
+    <script>
+        function emitirReceita() {
+            window.location.href = 'EmitirReceita.html'; // Redireciona para a página de emissão de receita
+        }
+    </script>
 </body>
 
 </html>

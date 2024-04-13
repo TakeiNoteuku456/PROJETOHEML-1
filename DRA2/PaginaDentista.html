@@ -11,49 +11,135 @@
     <button class="menu-toggle" onclick="toggleMenu()">Adicionar Evento</button>
 
     <div class="menu" id="menu">
-        <a href="#" class="Consulta">Adicionar Consulta</a>
-        <a href="EditarFichaP.html">Editar Ficha do Paciente</a>
-        <a href="EmitirReceita.html">Emitir Receita</a>
+        <a href="LoginEditar.html">Editar Ficha do Paciente</a>
         <a href="ConsultarP.html">Consultar Pagamento</a>
     </div>
-    
+
+
+    <div class="calendario">
+        <div class="calendario-header">Domingo</div>
+        <div class="calendario-header">Segunda-feira</div>
+        <div class="calendario-header">Terça-feira</div>
+        <div class="calendario-header">Quarta-feira</div>
+        <div class="calendario-header">Quinta-feira</div>
+        <div class="calendario-header">Sexta-feira</div>
+        <div class="calendario-header">Sábado</div>
+        
+        <!-- Semana 1 -->
+        <div class="calendario-day"></div> <!-- Vazio -->
+        <div class="calendario-day" onclick="showConsultas(1)">1</div>
+        <div class="calendario-day" onclick="showConsultas(2)">2</div>
+        <div class="calendario-day" onclick="showConsultas(3)">3</div>
+        <div class="calendario-day" onclick="showConsultas(4)">4</div>
+        <div class="calendario-day" onclick="showConsultas(5)">5</div>
+        <div class="calendario-day" onclick="showConsultas(6)">6</div>
+        <div class="calendario-day" onclick="showConsultas(7)">7</div>
+        
+        <!-- Semana 2 -->
+        <div class="calendario-day" onclick="showConsultas(8)">8</div>
+        <div class="calendario-day" onclick="showConsultas(9)">9</div>
+        <div class="calendario-day" onclick="showConsultas(10)">10</div>
+        <div class="calendario-day" onclick="showConsultas(11)">11</div>
+        <div class="calendario-day" onclick="showConsultas(12)">12</div>
+        <div class="calendario-day" onclick="showConsultas(13)">13</div>
+        <div class="calendario-day" onclick="showConsultas(14)">14</div>
+        
+        <!-- Semana 3 -->
+        <div class="calendario-day" onclick="showConsultas(15)">15</div>
+        <div class="calendario-day" onclick="showConsultas(16)">16</div>
+        <div class="calendario-day" onclick="showConsultas(17)">17</div>
+        <div class="calendario-day" onclick="showConsultas(18)">18</div>
+        <div class="calendario-day" onclick="showConsultas(19)">19</div>
+        <div class="calendario-day" onclick="showConsultas(20)">20</div>
+        <div class="calendario-day" onclick="showConsultas(21)">21</div>
+        
+        <!-- Semana 4 -->
+        <div class="calendario-day" onclick="showConsultas(22)">22</div>
+        <div class="calendario-day" onclick="showConsultas(23)">23</div>
+        <div class="calendario-day" onclick="showConsultas(24)">24</div>
+        <div class="calendario-day" onclick="showConsultas(25)">25</div>
+        <div class="calendario-day" onclick="showConsultas(26)">26</div>
+        <div class="calendario-day" onclick="showConsultas(27)">27</div>
+        <div class="calendario-day" onclick="showConsultas(28)">28</div>
+        
+        <!-- Semana 5 -->
+        <div class="calendario-day" onclick="showConsultas(29)">29</div>
+        <div class="calendario-day" onclick="showConsultas(30)">30</div>
+        <div class="calendario-day" onclick="showConsultas(31)">31</div>
+        
+        <!-- Semana 6 -->
+        <!-- Adicione mais dias conforme necessário -->
+    </div>
+
+    <!-- Mini menu -->
+    <div id="mini-menu" class="mini-menu" style="display: none;">
+        <span class="close" onclick="closeMiniMenu()">&times;</span>
+        <div class="mini-menu-title">Consultas do Dia</div>
+        <div id="consultas-container"></div>
+    </div>
+
+
     <script>
         function toggleMenu() {
             var menu = document.getElementById('menu');
             menu.classList.toggle('active');
         }
-    </script>
 
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Adicionar Consulta</h2>
-        <form>
-            <label for="paciente">Nome do Paciente:</label>
-            <input type="text" id="paciente" name="paciente" required><br><br>
-            <label for="data">Data da Consulta:</label>
-            <input type="date" id="data" name="data" required><br><br>
-            <label for="hora">Hora da Consulta:</label>
-            <input type="time" id="hora" name="hora" required><br><br>
-            <label for="observacoes">Observações:</label><br>
-            <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea><br><br>
-            <button type="submit">Salvar</button>
-        </form>
-    </div>
-</div>
-
-
-    <script>
         document.querySelector('.Consulta').addEventListener('click', function() {
-    var modal = document.getElementById('modal');
-    modal.style.display = 'block'; // Exibe o modal
-    });
-    </script>
-    <script>
+            var modal = document.getElementById('modal');
+            modal.style.display = 'block'; // Exibe o modal
+        });
+
         // Função para fechar o modal
         function closeModal() {
             var modal = document.getElementById('modal');
             modal.style.display = 'none';
+        }
+
+        // Função para exibir as consultas de um determinado dia
+        function showConsultas(day) {
+            var consultas = [
+                { data: '2024-04-01', hora: '09:00', paciente: 'Maria Silva', observacoes: 'Check-up' },
+                { data: '2024-04-01', hora: '11:00', paciente: 'João Oliveira', observacoes: 'Extração de dente' },
+                { data: '2024-04-01', hora: '15:00', paciente: 'Ana Souza', observacoes: 'Limpeza' },
+                { data: '2024-04-05', hora: '10:30', paciente: 'Carlos Santos', observacoes: 'Consulta de rotina' },
+                { data: '2024-04-08', hora: '14:00', paciente: 'Roberto Silva', observacoes: 'Tratamento de canal' },
+                { data: '2024-04-08', hora: '16:30', paciente: 'Juliana Mendes', observacoes: 'Ortodontia' },
+                { data: '2024-04-12', hora: '09:30', paciente: 'Lucas Lima', observacoes: 'Avaliação inicial' },
+                { data: '2024-04-15', hora: '17:00', paciente: 'Fernanda Oliveira', observacoes: 'Restauração' },
+                { data: '2024-04-19', hora: '11:30', paciente: 'Mariana Ferreira', observacoes: 'Exame de raio-x' },
+                { data: '2024-04-22', hora: '08:00', paciente: 'Rafael Costa', observacoes: 'Consulta de emergência' },
+                { data: '2024-04-26', hora: '12:00', paciente: 'Patrícia Almeida', observacoes: 'Implante dentário' },
+                { data: '2024-04-30', hora: '14:30', paciente: 'Amanda Rodrigues', observacoes: 'Clareamento dental' },
+                { data: '2024-04-02', hora: '14:00', paciente: 'Laura Pereira', observacoes: 'Consulta de rotina' },
+                { data: '2024-04-03', hora: '09:30', paciente: 'Paulo Martins', observacoes: 'Tratamento de canal' },
+                { data: '2024-04-05', hora: '16:00', paciente: 'Camila Gonçalves', observacoes: 'Ortodontia' },
+                { data: '2024-04-06', hora: '13:30', paciente: 'Eduardo Santos', observacoes: 'Extração de dente' },
+                { data: '2024-04-10', hora: '11:00', paciente: 'Isabela Oliveira', observacoes: 'Restauração' },
+                { data: '2024-04-13', hora: '15:30', paciente: 'Rodrigo Silva', observacoes: 'Avaliação inicial' },
+                { data: '2024-04-17', hora: '10:00', paciente: 'Larissa Costa', observacoes: 'Limpeza' },
+                { data: '2024-04-20', hora: '08:30', paciente: 'Luciana Fernandes', observacoes: 'Consulta de rotina' },
+                { data: '2024-04-24', hora: '12:30', paciente: 'Gustavo Almeida', observacoes: 'Implante dentário' },
+                { data: '2024-04-27', hora: '17:30', paciente: 'Vanessa Santos', observacoes: 'Clareamento dental' }
+            ];
+
+            // Filtra as consultas para o dia selecionado
+            var consultasDoDia = consultas.filter(function(consulta) {
+                return parseInt(consulta.data.split('-')[2]) === day;
+            });
+
+            // Exibe as consultas no mini menu
+            var consultasHtml = '';
+            consultasDoDia.forEach(function(consulta) {
+                consultasHtml += `Data: ${consulta.data}, Hora: ${consulta.hora}, Paciente: ${consulta.paciente}, Observações: ${consulta.observacoes}<br>`;
+            });
+            document.getElementById('consultas-container').innerHTML = consultasHtml;
+            document.getElementById('mini-menu').style.display = 'block';
+        }
+
+        // Função para fechar o mini menu
+        function closeMiniMenu() {
+            document.getElementById('mini-menu').style.display = 'none';
         }
     </script>
     <script src="js/scriptPagamento.js"></script>

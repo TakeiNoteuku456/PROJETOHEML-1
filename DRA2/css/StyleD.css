@@ -1,68 +1,53 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #99C6C8;
-    margin: 100px;
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    background-image: url('../imagens/Agenda.jpg');
-    background-size: cover; /* Para preencher completamente o corpo com a imagem */
-    background-position: center; /* Para centralizar a imagem no corpo */
+    min-height: 100vh; /* Alterado para min-height para cobrir toda a altura da tela */
+    background-size: cover;
+    background-position: center;
 }
 
-
-
-
-
-
-
-/* Define o estilo para o botão de menu */
 .menu-toggle {
-    position: fixed; /* Define a posição fixa para o botão */
-    top: 20px; /* Define a distância de 20 pixels a partir do topo */
-    left: 20px; /* Define a distância de 20 pixels a partir da esquerda */
-    display: inline-block; /* Define o elemento como um bloco inline */
-    padding: 10px 20px; /* Define o preenchimento interno do botão */
-    background-color: #2F98BC; /* Define a cor de fundo do botão */
-    color: #fff; /* Define a cor do texto do botão */
-    font-size: 16px; /* Define o tamanho do texto do botão */
-    border: none; /* Remove a borda do botão */
-    cursor: pointer; /* Define o cursor como ponteiro ao passar por cima do botão */
-    border-radius: 5px; /* Adiciona borda arredondada ao botão */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2F98BC;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-/* Define o estilo para o menu */
 .menu {
-    display: none; /* Inicia oculto */
-    position: absolute; /* Define a posição absoluta */
-    top: 60px; /* Define a distância de 60 pixels a partir do topo */
-    left: 20px; /* Define a distância de 20 pixels a partir da esquerda */
-    background-color: #2F98BC;; /* Define a cor de fundo do menu */
-    padding: 10px; /* Adiciona espaçamento interno ao menu */
-    border-radius: 5px; /* Adiciona borda arredondada ao menu */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao menu */
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #2F98BC;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Define o estilo para os itens do menu */
 .menu a {
-    display: block; /* Define os itens do menu como blocos de exibição */
-    padding: 10px 0; /* Adiciona espaçamento interno aos itens do menu */
-    color: #fff; /* Define a cor do texto dos itens do menu */
-    text-decoration: none; /* Remove decoração de texto dos itens do menu */
-    left: auto;
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
 }
-/* Define o estilo quando a classe .active é aplicada ao menu */
+
 .menu.active {
-    display: block; /* Exibe o menu quando a classe .active é aplicada */
+    display: block;
 }
 
-
-
-
- /* Estilos do modal */
- .modal {
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -75,7 +60,6 @@ body {
     padding-top: 60px;
 }
 
-/* Conteúdo do modal */
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto;
@@ -85,7 +69,6 @@ body {
     border-radius: 10px;
 }
 
-/* Botão de fechar do modal */
 .close {
     color: #aaa;
     float: right;
@@ -93,7 +76,6 @@ body {
     font-weight: bold;
 }
 
-/* Estilos do botão de fechar */
 .close:hover,
 .close:focus {
     color: black;
@@ -101,10 +83,67 @@ body {
     cursor: pointer;
 }
 
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calendario div {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.calendario-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.calendario-day {
+    cursor: pointer;
+    background-color: #f2f2f2;
+
+}
+
+.calendario-day:hover {
+    background-color: #e6e6e6;
+}
 
 
 
+/* Seus estilos CSS aqui */
+.mini-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Removida a transparência */
+    border: 1px solid #cccccc;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+    max-width: 400px; /* Define a largura máxima para o menu */
+}
 
+.mini-menu-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+.mini-menu-content {
+    max-height: 400px; /* Define a altura máxima para o conteúdo do menu */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o conteúdo ultrapasse a altura máxima */
+}
 
+.mini-menu-content-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
 
+.mini-menu-content-item:last-child {
+    border-bottom: none; /* Remove a borda inferior do último item */
+}

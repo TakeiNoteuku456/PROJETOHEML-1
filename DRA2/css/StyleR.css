@@ -8,7 +8,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('/DRA2/imagens/Agenda.jpg');
     background-size: cover; /* Para preencher completamente o corpo com a imagem */
     background-position: center; /* Para centralizar a imagem no corpo */
 }
@@ -189,4 +188,75 @@ body {
 
 .quadrado-receita button:hover {
     background-color: #2ca3ca;
+}
+
+
+
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calendario div {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.calendario-header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.calendario-day {
+    cursor: pointer;
+    background-color: #f2f2f2;
+
+}
+
+.calendario-day:hover {
+    background-color: #e6e6e6;
+}
+
+
+
+
+
+
+
+/* Seus estilos CSS aqui */
+.mini-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Removida a transparência */
+    border: 1px solid #cccccc;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+    max-width: 400px; /* Define a largura máxima para o menu */
+}
+.mini-menu-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.mini-menu-content {
+    max-height: 400px; /* Define a altura máxima para o conteúdo do menu */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o conteúdo ultrapasse a altura máxima */
+}
+
+.mini-menu-content-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.mini-menu-content-item:last-child {
+    border-bottom: none; /* Remove a borda inferior do último item */
 }

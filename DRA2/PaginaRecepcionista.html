@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,69 +7,315 @@
     <link rel="stylesheet" href="css/StyleR.css">
     <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
 </head>
+<style>
+    /* Estilos para o calendário */
+    .calendario {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .calendario-header {
+        background-color: #f0f0f0;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .calendario-day {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .calendario-day:hover {
+        background-color: #f0f0f0;
+    }
+</style>
 <body>
-    <button class="menu-toggle" onclick="toggleMenu()">Adicionar Evento</button>
-
-    <div class="menu" id="menu">
-        <a href="#" class="Consulta">Adicionar Consulta</a>
-        <a href="#" onclick="mostrarQuadradoReceita()">Visualizar Receita</a>
-        <a href="#" onclick="mostrarQuadradoPaciente()">Consultar Ficha do Paciente</a>
-    </div>
+    <button class="menu-toggle" onclick="goToConsulta()">Adicionar Consulta</button>
     
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-    </script>
-
-
-
-
-
-
-
-
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Adicionar Consulta</h2>
-        <form>
-            <label for="paciente">Nome do Paciente:</label>
-            <input type="text" id="paciente" name="paciente" required><br><br>
-            <label for="data">Data da Consulta:</label>
-            <input type="date" id="data" name="data" required><br><br>
-            <label for="hora">Hora da Consulta:</label>
-            <input type="time" id="hora" name="hora" required><br><br>
-            <label for="observacoes">Observações:</label><br>
-            <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea><br><br>
-            <button type="submit">Salvar</button>
-        </form>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Adicionar Consulta</h2>
+            <form id="consultaForm" onsubmit="addConsulta(event)">
+                <label for="paciente">Nome do Paciente:</label>
+                <input type="text" id="paciente" name="paciente" required><br><br>
+                <label for="data">Data da Consulta:</label>
+                <input type="date" id="data" name="data" required><br><br>
+                <label for="hora">Hora da Consulta:</label>
+                <input type="time" id="hora" name="hora" required><br><br>
+                <label for="observacoes">Observações:</label><br>
+                <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea><br><br>
+                <label for="tratamento">Tratamento Realizado:</label><br>
+                <input type="text" id="tratamento" name="tratamento"><br><br>
+                <label for="dentista">Dentista Responsável:</label><br>
+                <input type="text" id="dentista" name="dentista"><br><br>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
     </div>
+
+
+    <div class="calendario">
+        <div class="calendario-header">Domingo</div>
+        <div class="calendario-header">Segunda-feira</div>
+        <div class="calendario-header">Terça-feira</div>
+        <div class="calendario-header">Quarta-feira</div>
+        <div class="calendario-header">Quinta-feira</div>
+        <div class="calendario-header">Sexta-feira</div>
+        <div class="calendario-header">Sábado</div>
+        
+        <!-- Semana 1 -->
+        <div class="calendario-day"></div> <!-- Vazio -->
+        <div class="calendario-day" onclick="showConsultas(1)">1</div>
+        <div class="calendario-day" onclick="showConsultas(2)">2</div>
+        <div class="calendario-day" onclick="showConsultas(3)">3</div>
+        <div class="calendario-day" onclick="showConsultas(4)">4</div>
+        <div class="calendario-day" onclick="showConsultas(5)">5</div>
+        <div class="calendario-day" onclick="showConsultas(6)">6</div>
+        <div class="calendario-day" onclick="showConsultas(7)">7</div>
+        
+        <!-- Semana 2 -->
+        <div class="calendario-day" onclick="showConsultas(8)">8</div>
+        <div class="calendario-day" onclick="showConsultas(9)">9</div>
+        <div class="calendario-day" onclick="showConsultas(10)">10</div>
+        <div class="calendario-day" onclick="showConsultas(11)">11</div>
+        <div class="calendario-day" onclick="showConsultas(12)">12</div>
+        <div class="calendario-day" onclick="showConsultas(13)">13</div>
+        <div class="calendario-day" onclick="showConsultas(14)">14</div>
+        
+        <!-- Semana 3 -->
+        <div class="calendario-day" onclick="showConsultas(15)">15</div>
+        <div class="calendario-day" onclick="showConsultas(16)">16</div>
+        <div class="calendario-day" onclick="showConsultas(17)">17</div>
+        <div class="calendario-day" onclick="showConsultas(18)">18</div>
+        <div class="calendario-day" onclick="showConsultas(19)">19</div>
+        <div class="calendario-day" onclick="showConsultas(20)">20</div>
+        <div class="calendario-day" onclick="showConsultas(21)">21</div>
+        
+        <!-- Semana 4 -->
+        <div class="calendario-day" onclick="showConsultas(22)">22</div>
+        <div class="calendario-day" onclick="showConsultas(23)">23</div>
+        <div class="calendario-day" onclick="showConsultas(24)">24</div>
+        <div class="calendario-day" onclick="showConsultas(25)">25</div>
+        <div class="calendario-day" onclick="showConsultas(26)">26</div>
+        <div class="calendario-day" onclick="showConsultas(27)">27</div>
+        <div class="calendario-day" onclick="showConsultas(28)">28</div>
+        
+        <!-- Semana 5 -->
+        <div class="calendario-day" onclick="showConsultas(29)">29</div>
+        <div class="calendario-day" onclick="showConsultas(30)">30</div>
+        <div class="calendario-day" onclick="showConsultas(31)">31</div>
+        
+        <!-- Semana 6 -->
+        <!-- Adicione mais dias conforme necessário -->
+    
+    </div>
+
+<!-- Div para exibir consultas do dia -->
+<div id="consultasDoDia" style="display:none;">
+    <h2>Consultas do Dia</h2>
+    <ul id="listaConsultas">
+    </ul>
+</div>
+<!-- Modal para adicionar nova consulta -->
+<div id="modal" style="display:none;">
+    <h2>Adicionar Consulta</h2>
+    <form id="consultaForm">
+        <label for="data">Data:</label><br>
+        <input type="date" id="data" name="data"><br>
+        <label for="hora">Hora:</label><br>
+        <input type="time" id="hora" name="hora"><br>
+        <label for="paciente">Paciente:</label><br>
+        <input type="text" id="paciente" name="paciente"><br>
+        <label for="observacoes">Observações:</label><br>
+        <textarea id="observacoes" name="observacoes"></textarea><br>
+        <label for="tratamento">Tratamento Realizado:</label><br>
+        <input type="text" id="tratamento" name="tratamento"><br>
+        <label for="dentista">Dentista Responsável:</label><br>
+        <input type="text" id="dentista" name="dentista"><br>
+        <input type="submit" value="Adicionar">
+    </form>
 </div>
 
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById('menu');
-        menu.classList.toggle('active');
+    <script>
+        var consultas = [
+    { 
+        data: '2024-04-01', 
+        hora: '09:00', 
+        paciente: 'Ana Oliveira', 
+        observacoes: 'Limpeza', 
+        tratamento_realizado: 'Limpeza completa', 
+        dentista_responsavel: 'Dr. Carlos', 
+        data_realizacao: '2024-04-01' 
+    },
+    { 
+        data: '2024-04-02', 
+        hora: '10:30', 
+        paciente: 'Pedro Santos', 
+        observacoes: 'Extração de dente', 
+        tratamento_realizado: 'Extração do dente incisivo', 
+        dentista_responsavel: 'Dra. Maria', 
+        data_realizacao: '2024-04-02' 
+    },
+    { 
+        data: '2024-04-03', 
+        hora: '14:00', 
+        paciente: 'Mariana Silva', 
+        observacoes: 'Tratamento de canal', 
+        tratamento_realizado: 'Canal da raiz do molar', 
+        dentista_responsavel: 'Dr. João', 
+        data_realizacao: '2024-04-05' 
+    },
+    { 
+        data: '2024-04-06', 
+        hora: '11:00', 
+        paciente: 'Lucas Oliveira', 
+        observacoes: 'Restauração', 
+        tratamento_realizado: 'Restauração de resina composta', 
+        dentista_responsavel: 'Dra. Ana', 
+        data_realizacao: '2024-04-07' 
+    },
+    { 
+        data: '2024-04-10', 
+        hora: '16:30', 
+        paciente: 'Carla Costa', 
+        observacoes: 'Ortodontia', 
+        tratamento_realizado: 'Instalação de aparelho ortodôntico', 
+        dentista_responsavel: 'Dr. Rafael', 
+        data_realizacao: '2024-04-12' 
+    },
+    { 
+        data: '2024-04-15', 
+        hora: '08:30', 
+        paciente: 'Rodrigo Ferreira', 
+        observacoes: 'Consulta de rotina', 
+        tratamento_realizado: 'Consulta de rotina', 
+        dentista_responsavel: 'Dra. Camila', 
+        data_realizacao: '2024-04-15' 
+    },
+    { 
+        data: '2024-04-17', 
+        hora: '13:00', 
+        paciente: 'Gabriela Almeida', 
+        observacoes: 'Implante dentário', 
+        tratamento_realizado: 'Implante de coroa dentária', 
+        dentista_responsavel: 'Dr. Gustavo', 
+        data_realizacao: '2024-04-20' 
+    },
+    { 
+        data: '2024-04-20', 
+        hora: '15:00', 
+        paciente: 'Bruno Santos', 
+        observacoes: 'Clareamento dental', 
+        tratamento_realizado: 'Clareamento a laser', 
+        dentista_responsavel: 'Dra. Vanessa', 
+        data_realizacao: '2024-04-21' 
+    },
+    { 
+        data: '2024-04-23', 
+        hora: '09:30', 
+        paciente: 'Fernanda Lima', 
+        observacoes: 'Consulta de emergência', 
+        tratamento_realizado: 'Consulta de emergência', 
+        dentista_responsavel: 'Dr. Paulo', 
+        data_realizacao: '2024-04-23' 
+    },
+    { 
+        data: '2024-04-28', 
+        hora: '17:30', 
+        paciente: 'Renata Oliveira', 
+        observacoes: 'Exame de raio-x', 
+        tratamento_realizado: 'Exame de raio-x panorâmico', 
+        dentista_responsavel: 'Dra. Isabela', 
+        data_realizacao: '2024-04-30' 
     }
-</script>
+];
 
-<script>
-    document.querySelector('.Consulta').addEventListener('click', function() {
-        var modal = document.getElementById('modal');
-        modal.style.display = 'block'; // Exibe o modal
+
+function showConsultas(day) {
+    var consultasDoDia = consultas.filter(function(consulta) {
+        return consulta.data.split('-')[2] == day; // Filtra as consultas pelo dia selecionado
     });
 
-    // Função para fechar o modal
-    function closeModal() {
-        var modal = document.getElementById('modal');
-        modal.style.display = 'none';
+    var listaConsultas = document.getElementById('listaConsultas');
+    listaConsultas.innerHTML = ''; // Limpa a lista de consultas do dia
+
+    if (consultasDoDia.length > 0) {
+        consultasDoDia.forEach(function(consulta) {
+            var li = document.createElement('li');
+            li.textContent = "Hora: " + consulta.hora + 
+                              " - Paciente: " + consulta.paciente + 
+                              " - Observações: " + consulta.observacoes +
+                              " - Tratamento Realizado: " + consulta.tratamento_realizado +
+                              " - Dentista Responsável: " + consulta.dentista_responsavel +
+                              " - Data da Realização: " + consulta.data_realizacao;
+            listaConsultas.appendChild(li);
+        });
+        document.getElementById('consultasDoDia').style.display = 'block'; // Exibe a lista de consultas do dia
+    } else {
+        alert('Não há consultas agendadas para este dia.');
     }
+}
+    function openModal() {
+    var modal = document.getElementById('modal');
+    modal.style.display = 'block';
+}
+
+// Adicione este código para direcionar para a seção "Adicionar Consulta" quando o botão for clicado
+function goToConsulta() {
+    var modal = document.getElementById('modal');
+    modal.style.display = 'block';
+    // Scroll para a seção "Adicionar Consulta"
+    document.getElementById('modal').scrollIntoView();
+}
+function closeModal() {
+    var modal = document.getElementById('modal');
+    modal.style.display = 'none';
+}
+
+// Adicione este código para fechar o modal quando clicar fora dele
+window.onclick = function(event) {
+    var modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Quadrado com informações do paciente -->
-<div id="quadradoPaciente" class="quadrado-paciente">
+<!-- <div id="quadradoPaciente" class="quadrado-paciente">
     <h2>Informações do Paciente</h2>
     <p>Nome: João da Silva</p>
     <p>Email: joao.silva@example.com</p>
@@ -88,10 +334,10 @@
         var quadrado = document.getElementById('quadradoPaciente');
         quadrado.style.display = 'none';
     }
-</script>
+</script> -->
 
 <!-- Quadrado com a receita -->
-<div id="quadradoReceita" class="quadrado-receita">
+<!-- <div id="quadradoReceita" class="quadrado-receita">
     <h2>Receita Médica</h2>
     <p>Medicamento: Nome do Medicamento</p>
     <p>Dosagem: 10mg</p>
@@ -109,7 +355,7 @@
         var quadrado = document.getElementById('quadradoReceita');
         quadrado.style.display = 'none';
     }
-</script>
+</script> -->
 
 
 

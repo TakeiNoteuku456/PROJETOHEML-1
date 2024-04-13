@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('/DRA2/imagens/Agenda.jpg');
+    background-image: url('../imagens/Agenda.jpg');
     background-size: cover; /* Para preencher completamente o corpo com a imagem */
     background-position: center; /* Para centralizar a imagem no corpo */
 }

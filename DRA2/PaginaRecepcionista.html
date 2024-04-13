@@ -7,33 +7,15 @@
     <link rel="stylesheet" href="css/StyleR.css">
     <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
 </head>
-<style>
-    /* Estilos para o calendário */
-    .calendario {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
-    }
 
-    .calendario-header {
-        background-color: #f0f0f0;
-        padding: 5px;
-        text-align: center;
-    }
-
-    .calendario-day {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-        cursor: pointer;
-    }
-
-    .calendario-day:hover {
-        background-color: #f0f0f0;
-    }
-</style>
 <body>
     <button class="menu-toggle" onclick="goToConsulta()">Adicionar Consulta</button>
+
+
+    <div class="menu" id="menu">
+        <a href="#" class="Consulta" onclick="goToConsulta()">Adicionar Consulta</a>
+        <a href="EditarFichaP.html" >Editar Ficha do Paciente</a>
+    </div>
     
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -246,12 +228,12 @@ function showConsultas(day) {
     if (consultasDoDia.length > 0) {
         consultasDoDia.forEach(function(consulta) {
             var li = document.createElement('li');
-            li.textContent = "Hora: " + consulta.hora + 
-                              " - Paciente: " + consulta.paciente + 
-                              " - Observações: " + consulta.observacoes +
-                              " - Tratamento Realizado: " + consulta.tratamento_realizado +
-                              " - Dentista Responsável: " + consulta.dentista_responsavel +
-                              " - Data da Realização: " + consulta.data_realizacao;
+            li.innerHTML = "Hora: " + consulta.hora + "<br>" +
+                           "Paciente: " + consulta.paciente + "<br>" +
+                           "Observações: " + consulta.observacoes + "<br>" +
+                           "Tratamento Realizado: " + consulta.tratamento_realizado + "<br>" +
+                           "Dentista Responsável: " + consulta.dentista_responsavel + "<br>" +
+                           "Data da Realização: " + consulta.data_realizacao;
             listaConsultas.appendChild(li);
         });
         document.getElementById('consultasDoDia').style.display = 'block'; // Exibe a lista de consultas do dia

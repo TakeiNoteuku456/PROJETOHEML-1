@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #99C6C8;
-    margin: 100px;
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ body {
     position: absolute; /* Define a posição absoluta */
     top: 60px; /* Define a distância de 60 pixels a partir do topo */
     left: 20px; /* Define a distância de 20 pixels a partir da esquerda */
-    background-color: #2F98BC;; /* Define a cor de fundo do menu */
+    background-color: #2F98BC; /* Define a cor de fundo do menu */
     padding: 10px; /* Adiciona espaçamento interno ao menu */
     border-radius: 5px; /* Adiciona borda arredondada ao menu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao menu */
@@ -107,156 +107,27 @@ body {
     text-decoration: none;
 }
 
-.quadrado-paciente {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #99C6C8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    z-index: 999;
-}
-
-.quadrado-paciente h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #333;
-}
-
-.quadrado-paciente p {
-    margin: 10px 0;
-}
-
-.quadrado-paciente p strong {
-    font-weight: bold;
-}
-
-.botao-fechar {
-    padding: 10px 20px;
-    background-color: #2F98BC;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.botao-fechar:hover {
-    background-color: #2ca3ca;
-}
-
-/* Estilos CSS para o quadrado de visualização da receita */
-.quadrado-receita {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #99C6C8;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    text-align: center;
-    z-index: 999;
-}
-
-.quadrado-receita h2 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.quadrado-receita p {
-    margin: 10px 0;
-}
-
-.quadrado-receita button {
-    padding: 10px 20px;
-    background-color: #2F98BC;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.quadrado-receita button:hover {
-    background-color: #2ca3ca;
-}
-
-
-
-
+/* Estilos para o calendário */
 .calendario {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.calendario div {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
+    gap: 5px;
 }
 
 .calendario-header {
-    font-weight: bold;
-    background-color: #f2f2f2;
+    background-color: #f0f0f0;
+    padding: 5px;
+    text-align: center;
 }
 
 .calendario-day {
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
     cursor: pointer;
-    background-color: #f2f2f2;
-
 }
 
 .calendario-day:hover {
-    background-color: #e6e6e6;
-}
-
-
-
-
-
-
-
-/* Seus estilos CSS aqui */
-.mini-menu {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff; /* Removida a transparência */
-    border: 1px solid #cccccc;
-    padding: 20px;
-    border-radius: 5px;
-    z-index: 999;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
-    max-width: 400px; /* Define a largura máxima para o menu */
-}
-.mini-menu-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.mini-menu-content {
-    max-height: 400px; /* Define a altura máxima para o conteúdo do menu */
-    overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o conteúdo ultrapasse a altura máxima */
-}
-
-.mini-menu-content-item {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 10px;
-}
-
-.mini-menu-content-item:last-child {
-    border-bottom: none; /* Remove a borda inferior do último item */
+    background-color: #f0f0f0;
 }

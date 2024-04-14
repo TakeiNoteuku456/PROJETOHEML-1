@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Editar Dados</title>
     <link rel="stylesheet" href="css/styleeditardados.css">
     <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
 </head>
 <body>
-    
-    
-    <body>
-        <div class="form-container">
-            <form action="processar_edicao.php" method="POST">
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" value="Nome Atual"><br>
-                
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" value="email@exemplo.com"><br>
-    
-                <label for="telefone">Telefone:</label><br>
-                <input type="text" id="telefone" name="telefone" value="123456789"><br>
-    
-                <label for="endereco">Endereço:</label><br>
-                <textarea id="endereco" name="endereco">Endereço Atual</textarea><br>
-    
-                <div class="botoes">
-                    <input type="submit" value="Salvar" class="botao-salvar">
-                    <button type="button" onclick="voltarPagina()" class="botao-voltar">Voltar</button>
-                </div>
-            </form>
-        </div>
-    
-        <script>
-            function voltarPagina() {
-                window.location.href = 'paginapaciente.html';
-            }
-        </script>
-    </body>
+    <div class="form-container">
+        <h1>Editar Dados do Paciente</h1>
+        <form action="processar_edicao.php" method="POST" onsubmit="return exibirMensagem()">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" value="Nome Atual"><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" value="email@exemplo.com"><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" value="123456789"><br>
+
+            <label for="endereco">Endereço:</label><br>
+            <textarea id="endereco" name="endereco">Endereço Atual</textarea><br>
+
+            <div class="botoes">
+                <button type="submit" class="botao-salvar">Salvar</button>
+                <a href="paginapaciente.html" class="botao-voltar">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function exibirMensagem() {
+            // Mostrar mensagem de sucesso
+            alert("Dados alterados com sucesso!");
+
+            // Redirecionar para outra página após 2 segundos (2000 milissegundos)
+            setTimeout(function() {
+                window.location.href = 'paginapaciente.html'; 
+            }, 2000); // Tempo em milissegundos (2 segundos)
+            
+            return false; // Impedir o envio do formulário imediatamente
+        }
+    </script>
 </body>
 </html>

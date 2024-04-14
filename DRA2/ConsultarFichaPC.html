@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha do Paciente</title>
+    <link rel="shortcut icon" href="../imagens/icone-ico.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #99C6C8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            background-color: #85aaac;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            min-height: 80vh;
+            overflow-y: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #111;
+            margin-bottom: 20px;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        li h3 {
+            margin-bottom: 5px;
+        }
+
+        li p {
+            margin: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        li p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha do Paciente</h1>
+        <h2>Nome: João da Silva</h2>
+        <h2>CPF: 123.456.789-00</h2>
+        <h2>Email: joao.silva@example.com</h2>
+        <h2>Telefone: (11) 99999-9999</h2>
+        <h2>Endereço: Rua das Flores, 123</h2>
+    
+        <h3>Consultas Realizadas:</h3>
+        <ul id="consultasPaciente">
+            <li>
+                <h3>Tratamento Realizado:</h3>
+                <p>Consulta de rotina</p>
+                <h3>Dentista Responsável:</h3>
+                <p>Dra. Maria</p>
+                <h3>Data da Realização:</h3>
+                <p>2024-07-20</p>
+                <h3>Pago:</h3>
+                <p>Sim</p>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        var consultas = [
+            { 
+                data: '2024-04-01', 
+                hora: '09:00', 
+                paciente: 'João da Silva', 
+                observacoes: 'Limpeza', 
+                tratamento_realizado: 'Limpeza completa', 
+                dentista_responsavel: 'Dr. Carlos', 
+                data_realizacao: '2024-04-01',
+                pago: true
+            },
+            { 
+                data: '2024-04-15', 
+                hora: '08:30', 
+                paciente: 'João da Silva', 
+                observacoes: 'Consulta de rotina', 
+                tratamento_realizado: 'Consulta de rotina', 
+                dentista_responsavel: 'Dra. Camila', 
+                data_realizacao: '2024-04-15',
+                pago: false
+            },
+            { 
+                data: '2024-05-20', 
+                hora: '10:00', 
+                paciente: 'João da Silva', 
+                observacoes: 'Extração de dente', 
+                tratamento_realizado: 'Extração do dente siso', 
+                dentista_responsavel: 'Dra. Ana', 
+                data_realizacao: '2024-05-20',
+                pago: true
+            },
+            { 
+                data: '2024-06-10', 
+                hora: '14:30', 
+                paciente: 'João da Silva', 
+                observacoes: 'Tratamento de canal', 
+                tratamento_realizado: 'Canal da raiz do molar', 
+                dentista_responsavel: 'Dr. Pedro', 
+                data_realizacao: '2024-06-10',
+                pago: true
+            }
+            // Adicione mais consultas conforme necessário
+        ];
+    
+        var consultasPaciente = document.getElementById('consultasPaciente');
+    
+        consultas.forEach(function(consulta) {
+            var li = document.createElement('li');
+            li.innerHTML = "<h3>Tratamento Realizado:</h3><p>" + consulta.tratamento_realizado + "</p>" +
+                           "<h3>Dentista Responsável:</h3><p>" + consulta.dentista_responsavel + "</p>" +
+                           "<h3>Data da Realização:</h3><p>" + consulta.data_realizacao + "</p>" +
+                           "<h3>Pago:</h3><p>" + (consulta.pago ? 'Sim' : 'Não') + "</p>";
+            consultasPaciente.appendChild(li);
+        });
+    </script>
+</body>
+</html>

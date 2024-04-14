@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <button class="menu-toggle" onclick="toggleMenu()">Adicionar Evento</button>
 
     <div class="menu" id="menu">
-        <a href="#" onclick="mostrarQuadradoPaciente()">Consultar Ficha do Paciente</a>
+        <a href="LoginConsultarFP.html">Consultar Ficha do Paciente</a>
         <a href="#" onclick="mostrarMiniMenu()">Consultar Pagamento</a>
         <a href="cadastrarfuncionario.html" onclick="">Cadastrar Funcionário</a>
         <a href="ConsultarPC.html">Consultar Pagamento da Clínica</a>
@@ -36,7 +36,6 @@ function fecharMenuPagamento() {
 
 
 
-
 <!-- Div para exibir o menu de colocar os dados do pagamento -->
 <div id="miniMenu" class="dropdown-content">
     <form onsubmit="consultarPagamento(event)">
@@ -53,41 +52,6 @@ function fecharMenuPagamento() {
     }
 </script>
 
-<!-- Quadrado com informações do paciente -->
-<div id="quadradoPaciente" class="quadrado-paciente">
-    <h2>Informações do Paciente</h2>
-    <p>Nome: João da Silva</p>
-    <p>Email: joao.silva@example.com</p>
-    <p>Telefone: (11) 99999-9999</p>
-    <p>Endereço: Rua das Flores, 123</p>
-    <button onclick="fecharQuadradoPaciente()">Fechar</button>
-</div>
-
-<script>
-    function mostrarQuadradoPaciente() {
-        var quadrado = document.getElementById('quadradoPaciente');
-        quadrado.style.display = 'block';
-    }
-
-    function fecharQuadradoPaciente() {
-        var quadrado = document.getElementById('quadradoPaciente');
-        quadrado.style.display = 'none';
-    }
-</script>
-
-
-
-
-
-<!-- Quadrado com informações do paciente -->
-<div id="quadradoPaciente" class="quadrado-paciente">
-    <h2>Informações do Paciente</h2>
-    <p>Nome: João da Silva</p>
-    <p>Email: joao.silva@example.com</p>
-    <p>Telefone: (11) 99999-9999</p>
-    <p>Endereço: Rua das Flores, 123</p>
-    <button onclick="fecharQuadradoPaciente()">Fechar</button>
-</div>
 
 <!-- Div para exibir os detalhes do pagamento -->
 <div id="paymentDetails" style="display: none;">
@@ -147,6 +111,211 @@ function fecharMenuPagamento() {
         var quadrado = document.getElementById('quadradoPaciente');
         quadrado.style.display = 'none';
     }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="calendario">
+    <div class="calendario-header">Domingo</div>
+    <div class="calendario-header">Segunda-feira</div>
+    <div class="calendario-header">Terça-feira</div>
+    <div class="calendario-header">Quarta-feira</div>
+    <div class="calendario-header">Quinta-feira</div>
+    <div class="calendario-header">Sexta-feira</div>
+    <div class="calendario-header">Sábado</div>
+    
+    <!-- Semana 1 -->
+    <div class="calendario-day"></div> <!-- Vazio -->
+    <div class="calendario-day" onclick="showConsultas(1)">1</div>
+    <div class="calendario-day" onclick="showConsultas(2)">2</div>
+    <div class="calendario-day" onclick="showConsultas(3)">3</div>
+    <div class="calendario-day" onclick="showConsultas(4)">4</div>
+    <div class="calendario-day" onclick="showConsultas(5)">5</div>
+    <div class="calendario-day" onclick="showConsultas(6)">6</div>
+    <div class="calendario-day" onclick="showConsultas(7)">7</div>
+    
+    <!-- Semana 2 -->
+    <div class="calendario-day" onclick="showConsultas(8)">8</div>
+    <div class="calendario-day" onclick="showConsultas(9)">9</div>
+    <div class="calendario-day" onclick="showConsultas(10)">10</div>
+    <div class="calendario-day" onclick="showConsultas(11)">11</div>
+    <div class="calendario-day" onclick="showConsultas(12)">12</div>
+    <div class="calendario-day" onclick="showConsultas(13)">13</div>
+    <div class="calendario-day" onclick="showConsultas(14)">14</div>
+    
+    <!-- Semana 3 -->
+    <div class="calendario-day" onclick="showConsultas(15)">15</div>
+    <div class="calendario-day" onclick="showConsultas(16)">16</div>
+    <div class="calendario-day" onclick="showConsultas(17)">17</div>
+    <div class="calendario-day" onclick="showConsultas(18)">18</div>
+    <div class="calendario-day" onclick="showConsultas(19)">19</div>
+    <div class="calendario-day" onclick="showConsultas(20)">20</div>
+    <div class="calendario-day" onclick="showConsultas(21)">21</div>
+    
+    <!-- Semana 4 -->
+    <div class="calendario-day" onclick="showConsultas(22)">22</div>
+    <div class="calendario-day" onclick="showConsultas(23)">23</div>
+    <div class="calendario-day" onclick="showConsultas(24)">24</div>
+    <div class="calendario-day" onclick="showConsultas(25)">25</div>
+    <div class="calendario-day" onclick="showConsultas(26)">26</div>
+    <div class="calendario-day" onclick="showConsultas(27)">27</div>
+    <div class="calendario-day" onclick="showConsultas(28)">28</div>
+    
+    <!-- Semana 5 -->
+    <div class="calendario-day" onclick="showConsultas(29)">29</div>
+    <div class="calendario-day" onclick="showConsultas(30)">30</div>
+    <div class="calendario-day" onclick="showConsultas(31)">31</div>
+    
+    <!-- Semana 6 -->
+    <!-- Adicione mais dias conforme necessário -->
+</div>
+<!-- Div para exibir as consultas do dia -->
+<div id="consultasDoDia" style="display: none;">
+    <h2>Consultas do Dia</h2>
+    <ul id="listaConsultas"></ul>
+</div>
+<script>
+    var consultas = [
+    { 
+        data: '2024-04-01', 
+        hora: '09:00', 
+        paciente: 'Ana Oliveira', 
+        observacoes: 'Limpeza', 
+        tratamento_realizado: 'Limpeza completa', 
+        dentista_responsavel: 'Dr. Carlos', 
+        data_realizacao: '2024-04-01' 
+    },
+    { 
+        data: '2024-04-02', 
+        hora: '10:30', 
+        paciente: 'Pedro Santos', 
+        observacoes: 'Extração de dente', 
+        tratamento_realizado: 'Extração do dente incisivo', 
+        dentista_responsavel: 'Dra. Maria', 
+        data_realizacao: '2024-04-02' 
+    },
+    { 
+        data: '2024-04-03', 
+        hora: '14:00', 
+        paciente: 'Mariana Silva', 
+        observacoes: 'Tratamento de canal', 
+        tratamento_realizado: 'Canal da raiz do molar', 
+        dentista_responsavel: 'Dr. João', 
+        data_realizacao: '2024-04-05' 
+    },
+    { 
+        data: '2024-04-06', 
+        hora: '11:00', 
+        paciente: 'Lucas Oliveira', 
+        observacoes: 'Restauração', 
+        tratamento_realizado: 'Restauração de resina composta', 
+        dentista_responsavel: 'Dra. Ana', 
+        data_realizacao: '2024-04-07' 
+    },
+    { 
+        data: '2024-04-10', 
+        hora: '16:30', 
+        paciente: 'Carla Costa', 
+        observacoes: 'Ortodontia', 
+        tratamento_realizado: 'Instalação de aparelho ortodôntico', 
+        dentista_responsavel: 'Dr. Rafael', 
+        data_realizacao: '2024-04-12' 
+    },
+    { 
+        data: '2024-04-15', 
+        hora: '08:30', 
+        paciente: 'Rodrigo Ferreira', 
+        observacoes: 'Consulta de rotina', 
+        tratamento_realizado: 'Consulta de rotina', 
+        dentista_responsavel: 'Dra. Camila', 
+        data_realizacao: '2024-04-15' 
+    },
+    { 
+        data: '2024-04-17', 
+        hora: '13:00', 
+        paciente: 'Gabriela Almeida', 
+        observacoes: 'Implante dentário', 
+        tratamento_realizado: 'Implante de coroa dentária', 
+        dentista_responsavel: 'Dr. Gustavo', 
+        data_realizacao: '2024-04-20' 
+    },
+    { 
+        data: '2024-04-20', 
+        hora: '15:00', 
+        paciente: 'Bruno Santos', 
+        observacoes: 'Clareamento dental', 
+        tratamento_realizado: 'Clareamento a laser', 
+        dentista_responsavel: 'Dra. Vanessa', 
+        data_realizacao: '2024-04-21' 
+    },
+    { 
+        data: '2024-04-23', 
+        hora: '09:30', 
+        paciente: 'Fernanda Lima', 
+        observacoes: 'Consulta de emergência', 
+        tratamento_realizado: 'Consulta de emergência', 
+        dentista_responsavel: 'Dr. Paulo', 
+        data_realizacao: '2024-04-23' 
+    },
+    { 
+        data: '2024-04-28', 
+        hora: '17:30', 
+        paciente: 'Renata Oliveira', 
+        observacoes: 'Exame de raio-x', 
+        tratamento_realizado: 'Exame de raio-x panorâmico', 
+        dentista_responsavel: 'Dra. Isabela', 
+        data_realizacao: '2024-04-30' 
+    }
+];
+
+function showConsultas(day) {
+            var consultasDoDia = consultas.filter(function(consulta) {
+                return consulta.data.split('-')[2] == day; // Filtra as consultas pelo dia selecionado
+            });
+
+            var listaConsultas = document.getElementById('listaConsultas');
+            listaConsultas.innerHTML = ''; // Limpa a lista de consultas do dia
+
+            if (consultasDoDia.length > 0) {
+                consultasDoDia.forEach(function(consulta) {
+                    var li = document.createElement('li');
+                    li.innerHTML = "Hora: " + consulta.hora + "<br>" +
+                                    "Paciente: " + consulta.paciente + "<br>" +
+                                    "Observações: " + consulta.observacoes + "<br>" +
+                                    "Tratamento Realizado: " + consulta.tratamento_realizado + "<br>" +
+                                    "Dentista Responsável: " + consulta.dentista_responsavel + "<br>" +
+                                    "Data da Realização: " + consulta.data_realizacao;
+                    listaConsultas.appendChild(li);
+                });
+                document.getElementById('consultasDoDia').style.display = 'block'; // Exibe a lista de consultas do dia
+            } else {
+                alert('Não há consultas agendadas para este dia.');
+            }
+        }
 </script>
 </body>
 </html>

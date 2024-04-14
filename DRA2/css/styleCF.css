@@ -86,3 +86,17 @@ body {/* fundo */
 .hidden {
     display: none;
 }
+#successMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3084a0;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px; /* Tamanho do texto */
+    z-index: 999;
+    display: none;
+}

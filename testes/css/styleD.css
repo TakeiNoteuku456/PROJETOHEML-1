@@ -1,0 +1,41 @@
+.menu-toggle {
+    /** Define a classe .menu-toggle */
+    position: fixed; /** Define a posição do elemento como fixa */
+    top: 20px; /** Define a distância do topo como 20px */
+    left: 20px; /** Define a distância da esquerda como 20px */
+    display: inline-block; /** Define o elemento como um bloco inline */
+    padding: 15px 20px; /** Define o preenchimento interno como 10px superior/inferior e 20px esquerda/direita */
+    background-color: #2F98BC; /** Define a cor de fundo como #2F98BC */
+    color: #fff; /** Define a cor do texto como branco (#fff) */
+    font-size: 25px; /** Define o tamanho da fonte como 16 pixels */
+    border: none; /** Remove a borda */
+    cursor: pointer; /** Define o cursor como uma mão (indicando que é clicável) */
+    border-radius: 5px; /** Adiciona um raio de borda de 5 pixels (bordas arredondadas) */
+}
+
+.menu {
+    /** Define a classe .menu */
+    display: none; /** Oculta o menu */
+    position: absolute; /** Define a posição do menu como absoluta */
+    top: 90px; /** Define a distância do topo como 60px */
+    left: 20px; /** Define a distância da esquerda como 20px */
+    background-color: #2F98BC; /** Define a cor de fundo como #2F98BC */
+    padding: 10px; /** Define o preenchimento interno como 10px */
+    border-radius: 5px; /** Adiciona um raio de borda de 5 pixels (bordas arredondadas) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /** Adiciona uma sombra */
+}
+
+.menu a {
+    /** Define os links dentro do menu */
+    display: block; /** Define os links como elementos de bloco */
+    padding: 10px 10px; /** Define o preenchimento interno como 10px superior/inferior e 0 à esquerda/direita */
+    color: #fff; /** Define a cor do texto como branco (#fff) */
+    text-decoration: none; /** Remove a decoração de texto */
+    font-size: 20px;
+}
+
+.menu.active {
+    /** Define a classe .active do menu */
+    display: block; /** Exibe o menu */
+}
+

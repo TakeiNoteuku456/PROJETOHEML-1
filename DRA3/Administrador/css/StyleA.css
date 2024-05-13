@@ -1,0 +1,246 @@
+ /* body {
+    font-family: Arial, sans-serif;
+    background-color: #99C6C8;
+    margin: 100px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-size: cover;  Para preencher completamente o corpo com a imagem 
+    background-position: center; Para centralizar a imagem no corpo 
+}  */
+
+
+/* Define o estilo para o botão de menu */
+.menu-toggle {
+    position: fixed; /** Define a posição do elemento como fixa */
+    top: 20px; /** Define a distância do topo como 20px */
+    left: 20px; /** Define a distância da esquerda como 20px */
+    display: inline-block; /** Define o elemento como um bloco inline */
+    padding: 15px 20px; /** Define o preenchimento interno como 10px superior/inferior e 20px esquerda/direita */
+    background-color: #2F98BC; /** Define a cor de fundo como #2F98BC */
+    color: #fff; /** Define a cor do texto como branco (#fff) */
+    font-size: 25px; /** Define o tamanho da fonte como 16 pixels */
+    border: none; /** Remove a borda */
+    cursor: pointer; /** Define o cursor como uma mão (indicando que é clicável) */
+    border-radius: 5px; /** Adiciona um raio de borda de 5 pixels (bordas arredondadas) */
+    z-index: 999; /* Certifique-se de que o botão de alternância esteja acima de outros conteúdos */
+}
+
+
+
+
+/* Define o estilo para o menu */
+.menu {
+    /** Define a classe .menu */
+    display: none; /** Oculta o menu */
+    position: fixed; /* Alterado para 'fixed' */
+    top: 90px; /** Define a distância do topo como 60px */
+    left: 20px; /** Define a distância da esquerda como 20px */
+    background-color: #2F98BC; /** Define a cor de fundo como #2F98BC */
+    padding: 10px; /** Define o preenchimento interno como 10px */
+    border-radius: 5px; /** Adiciona um raio de borda de 5 pixels (bordas arredondadas) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /** Adiciona uma sombra */
+    z-index: 998;
+}
+
+/* Define o estilo para os itens do menu */
+.menu a {
+    /** Define os links dentro do menu */
+    display: block; /** Define os links como elementos de bloco */
+    padding: 8px 10px; /** Define o preenchimento interno como 10px superior/inferior e 0 à esquerda/direita */
+    color: #fff; /** Define a cor do texto como branco (#fff) */
+    text-decoration: none; /** Remove a decoração de texto */
+    font-size: 20px;
+}
+/* Define o estilo quando a classe .active é aplicada ao menu */
+.menu.active {
+    display: block; /* Exibe o menu quando a classe .active é aplicada */
+}
+.menu a:hover{
+    background-color: #2ca3ca; /** Define a cor de fundo como #2F98BC */
+}
+
+
+
+
+
+.quadrado-paciente {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2F98BC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    z-index: 999;
+}
+
+.quadrado-paciente h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.quadrado-paciente p {
+    margin: 10px 0;
+}
+
+.quadrado-paciente p strong {
+    font-weight: bold;
+}
+.botao-fechar {
+    width: 40%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.botao-fechar:hover {
+    background-color: #2ca3ca;
+}
+
+
+
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2F98BC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    z-index: 999;
+}
+
+.dropdown-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-content label {
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.dropdown-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.dropdown-content button {
+    width: 40%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.dropdown-content button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilos para a div de detalhes do pagamento */
+#paymentDetails {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2F98BC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    z-index: 999;
+}
+
+#paymentDetails p {
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para o botão de fechar o menu de pagamento */
+.fechar-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
+
+
+
+/* Estilos para o calendário */
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendario-header {
+    background-color: #f0f0f0;
+    padding: 5px;
+    text-align: center;
+}
+
+.calendario-day {
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.calendario-day:hover {
+    background-color: #f0f0f0;
+}

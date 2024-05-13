@@ -1,0 +1,109 @@
+/* Define estilos para todos os elementos */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Define estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Define a altura para ocupar toda a altura da tela */
+    background-color: #99C6C8; /* Define a cor de fundo */
+}
+
+/* Define estilos para o container principal */
+.container {
+    background-color: #99C6C8; /* Define a cor de fundo */
+    padding: 50px; /* Adiciona espaço interno */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    text-align: center; /* Alinha o conteúdo ao centro */
+    margin-top: 50px; /* Adiciona margem superior */
+    max-width: 800px; /* Define a largura máxima */
+    width: 20%; /* Define a largura */
+}
+
+/* Define estilos para os inputs e outros elementos de formulário dentro do container */
+.container input[type="text"],
+.container input[type="password"],
+.container input[type="email"],
+.container input[type="tel"],
+.container textarea,
+.container select,
+.container input[type="date"] {
+    width: 100%; /* Define a largura como 100% */
+    padding: 15px; /* Adiciona espaço interno */
+    margin-bottom: 20px; /* Adiciona margem inferior */
+    border-radius: 20px; /* Adiciona borda arredondada */
+    box-sizing: border-box; /* Define a caixa de modelo */
+    background-color: #99C6C8; /* Define a cor de fundo */
+    border: 1px solid black; /* Adiciona uma borda preta */
+}
+
+/* Define estilos para a imagem redonda dentro do container */
+.imagem-redonda {
+    border-radius: 50%; /* Adiciona borda arredondada */
+    width: 150px; /* Define a largura */
+    margin-bottom: 30px; /* Adiciona margem inferior */
+}
+
+/* Define estilos para o botão de envio dentro do container */
+.container button[type="submit"] {
+    width: 100%; /* Define a largura como 100% */
+    padding: 15px; /* Adiciona espaço interno */
+    background-color: #2F98BC; /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto como branco */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Adiciona borda arredondada */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    display: block; /* Define como bloco para ocupar toda a largura disponível */
+    margin: 30px auto 0; /* Adiciona margem superior */
+}
+
+/* Define estilos para o botão de envio ao passar o mouse */
+.container button[type="submit"]:hover {
+    background-color: #2ca3ca; /* Altera a cor de fundo ao passar o mouse */
+}
+
+/* Define estilos para o título dentro do container */
+.container h1 {
+    text-align: center; /* Alinha ao centro */
+    font-size: 24px; /* Define o tamanho da fonte */
+    margin-bottom: 30px; /* Adiciona margem inferior */
+}
+
+/* Define estilos para as labels dentro do container */
+.container label {
+    margin-bottom: 10px; /* Adiciona margem inferior */
+    display: block; /* Define como bloco para ocupar toda a largura disponível */
+}
+
+/* Define estilos para os selects dentro do container */
+.container select {
+    padding: 12px; /* Adiciona espaço interno */
+}
+
+/* Define estilos para os botões de envio e cancelamento dentro do container */
+.container button[type="submit"],
+.container button[type="button"] {
+    width: 100%; /* Define a largura como 100% */
+    padding: 12px; /* Adiciona espaço interno */
+    background-color: #2F98BC; /* Define a cor de fundo */
+    color: #fff; /* Define a cor do texto como branco */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Adiciona borda arredondada */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+    display: block; /* Define como bloco para ocupar toda a largura disponível */
+    margin: 30px auto 0; /* Adiciona margem superior */
+    font-size: 20px; /* Define o tamanho da fonte */
+}
+
+/* Define estilos para os botões de envio e cancelamento ao passar o mouse */
+.container button[type="submit"]:hover,
+.container button[type="button"]:hover {
+    background-color: #2ca3ca; /* Altera a cor de fundo ao passar o mouse */
+}

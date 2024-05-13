@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #99C6C8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover; /* Para preencher completamente o corpo com a imagem */
+    background-position: center; /* Para centralizar a imagem no corpo */
+  }
+  
+  main {
+    background-color: #99C6C8; /* Fundo semi-transparente */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px #333;
+    max-width: 800px; /* Largura máxima do conteúdo */
+    width: 90%; /* Largura do conteúdo */
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+  }
+  
+  .filtro {
+    margin-bottom: 20px;
+  }
+  
+  .filtro h2 {
+    color: #333;
+  }
+  
+  .filtro label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .filtro button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2F98BC;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .filtro button {
+    width: 100%;
+  }
+  
+  .consultas {
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+  }
+  
+  th {
+    background-color: #2F98BC;
+    color: #333;
+  }
+  
+  tbody tr:hover {
+    background-color: rgba(47, 152, 188, 0.2); /* Fundo semi-transparente ao passar o mouse */
+  }
+  
+  .total {
+    font-weight: bold;
+  }
+
+
+  #tipoConsulta {
+    padding: 10px;
+    font-size: 16px;
+    border: 1.5px solid #000; /* Adiciona uma borda sólida com cor cinza */
+    border-radius: 5px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+    background-color: #99C6C8;
+    max-width: 200px; /* Largura máxima para manter a consistência com o design */
+    margin-bottom: 5px;
+  }
+
+#tipoConsulta:hover,
+#tipoConsulta:focus {
+    border-color: #2F98BC;
+}

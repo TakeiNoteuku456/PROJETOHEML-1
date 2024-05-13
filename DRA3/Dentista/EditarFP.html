@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Ficha do Paciente</title>
+    <link rel="stylesheet" href="css/styleE.css">
+    <link rel="shortcut icon" href="../../imagens/icone-ico.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Editar Ficha do Paciente</h1>
+        <form class="patient-form">
+            <label for="tratamento">Tratamento Feito:</label>
+            <input type="text" id="tratamento" name="tratamento" value="Limpeza de Canal">
+
+            <label for="dataRealizacao">Data da Realização:</label>
+            <input type="date" id="dataRealizacao" name="dataRealizacao" value="2024-04-15">
+
+            <label for="dentistaResponsavel">Dentista Responsável:</label>
+            <input type="text" id="dentistaResponsavel" name="dentistaResponsavel" value="Dr. João">
+
+            <button type="submit">Salvar Alterações</button>
+            <button type="button" onclick="emitirReceita()">Emitir Receita</button> <!-- Adicionei o tipo "button" -->
+        </form>
+    </div>
+
+    <script>
+        function emitirReceita() {
+            window.location.href = 'EmitirR.html'; // Redireciona para a página de emissão de receita
+        }
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -14,83 +15,71 @@ body {
     background-color: #99C6C8;
 }
 
-.container {
+
+
+/* Estilo do container */
+.container-login {
     background-color: #99C6C8;
-    padding: 50px; /* Aumenta o preenchimento */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    margin-top: 50px;
-    max-width: 800px; /* Aumenta a largura máxima */
-    width: 20%; /* Aumenta a largura */
 }
 
-.container input[type="text"],
-.container input[type="password"],
-.container input[type="email"],
-.container input[type="tel"],
-.container textarea,
-.container select,
-.container input[type="date"] {
-    width: 100%;
-    padding: 15px; /* Aumenta o preenchimento */
-    margin-bottom: 20px; /* Aumenta a margem inferior */
-    border-radius: 20px;
-    box-sizing: border-box;
-    background-color: #99C6C8;
-    border: 1px solid black;
+/* Estilo do título */
+.container-login h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000;
 }
+
+/* Estilo do formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo dos rótulos */
+.login-form label {
+    margin-bottom: 5px;
+    color: #000;
+    text-align: left;
+}
+
+/* Estilo dos inputs */
+.login-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo do botão */
+.login-form button {
+    padding: 10px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2F98BC;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px auto 0;
+}
+
+/* Efeito hover no botão */
+.login-form button:hover {
+    background-color: #287b99;
+}
+
+
 
 .imagem-redonda {
     border-radius: 50%;
-    width: 150px; /* Aumenta o tamanho da imagem */
-    margin-bottom: 30px; /* Aumenta a margem inferior */
-}
-
-.container button[type="submit"] {
-    width: 100%;
-    padding: 15px; /* Aumenta o preenchimento */
-    background-color: #2F98BC;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 30px auto 0; /* Aumenta a margem superior */
-}
-
-.container button[type="submit"]:hover {
-    background-color: #2ca3ca;
-}
-
-.container h1 {
-    text-align: center;
-    font-size: 24px; /* Aumenta o tamanho da fonte */
-    margin-bottom: 30px; /* Aumenta a margem inferior */
-}
-
-.container label {
-    margin-bottom: 10px; /* Aumenta a margem inferior */
-    display: block;
-}
-
-.container select {
-    padding: 12px; /* Aumenta o preenchimento */
-}
-.container button[type="submit"],
-.container button[type="button"] {
-    width: 100%;
-    padding: 15px; /* Aumenta o preenchimento */
-    background-color: #2F98BC;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 30px auto 0; /* Aumenta a margem superior */
-    font-size: 20px;
-}
-
-.container button[type="submit"]:hover,
-.container button[type="button"]:hover {
-    background-color: #2ca3ca;
+    width: 150px;
+    margin-bottom: 30px;
 }

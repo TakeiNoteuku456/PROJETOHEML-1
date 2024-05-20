@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/styleE.css">
+    <link rel="stylesheet" href="css/styleModalR.css">
+    <link rel="stylesheet" href="css/styleModelE.css">
     <link rel="shortcut icon" href="../../imagens/icone-ico.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-login">
         <h1>Login</h1>
         <form class="login-form" onsubmit="return false;">
             <label for="nome">Nome:</label>
@@ -20,8 +22,58 @@
             <input type="password" id="cpf" name="cpf">
 
             <button type="submit" onclick="login()">Entrar</button>
+            <button id="openPatientFormBtn">Abrir Ficha do Paciente</button>
         </form>
     </div>
+
+    <!-- Modal para Editar Ficha do Paciente -->
+<div id="patientFormModal" class="modal">
+    <div class="modal-content-patient">
+        <span class="close">&times;</span>
+        <div class="container">
+            <h1>Editar Ficha do Paciente</h1>
+            <form class="patient-form">
+                <label for="tratamento">Tratamento Feito:</label>
+                <input type="text" id="tratamento" name="tratamento" value="Limpeza de Canal">
+
+                <label for="dataRealizacao">Data da Realização:</label>
+                <input type="date" id="dataRealizacao" name="dataRealizacao" value="2024-04-15">
+
+                <label for="dentistaResponsavel">Dentista Responsável:</label>
+                <input type="text" id="dentistaResponsavel" name="dentistaResponsavel" value="Dr. João">
+
+                <button type="submit">Salvar Alterações</button>
+                <button type="button" id="openReceitaModalBtn">Emitir Receita</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Modal para Emitir Receita -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content-recipe">
+            <span class="close">&times;</span>
+            <h2>Emitir Receita</h2>
+            <form class="recipe-form">
+                <label for="patientName">Nome do Paciente:</label>
+                <input type="text" id="patientName" name="patientName" required>
+
+                <label for="medication">Medicação:</label>
+                <textarea id="medication" name="medication" required></textarea>
+
+                <label for="instructions">Instruções:</label>
+                <textarea id="instructions" name="instructions" required></textarea>
+
+                <label for="doctorName">Nome do Dentista:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+
+                <button type="submit">Emitir Receita</button>
+                <button type="button" id="backToPatientFormBtn">Voltar</button>
+            </form>
+        </div>
+    </div>
+
 
     <script>
         function login() {
@@ -34,6 +86,70 @@
                 window.location.href = 'EditarFP.html'; // Redireciona para a página de edição da ficha do paciente
             } else {
                 alert('Nome ou CPF incorretos. Tente novamente.');
+            }
+        }
+
+
+
+
+
+
+        // Função para abrir o modal
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // Obtenha os elementos do modal da ficha do paciente
+        var patientFormModal = document.getElementById("patientFormModal");
+        var openPatientFormBtn = document.getElementById("openPatientFormBtn");
+        var closePatientFormSpan = patientFormModal.querySelector(".close");
+
+        // Quando o usuário clicar no botão, abre o modal da ficha do paciente
+        openPatientFormBtn.onclick = function () {
+            openModal("patientFormModal");
+        }
+
+        // Quando o usuário clicar no X, fecha o modal da ficha do paciente
+        closePatientFormSpan.onclick = function () {
+            closeModal("patientFormModal");
+        }
+
+        // Obtenha os elementos do modal de emissão de receita
+        var receitaModal = document.getElementById("recipeModal");
+        var openReceitaBtn = document.getElementById("openReceitaModalBtn");
+        var closeReceitaSpan = receitaModal.querySelector(".close");
+        var backToPatientFormBtn = document.getElementById("backToPatientFormBtn");
+
+        // Quando o usuário clicar no botão, abre o modal de emissão de receita
+        openReceitaBtn.onclick = function () {
+            closeModal("patientFormModal");
+            openModal("recipeModal");
+        }
+
+        // Quando o usuário clicar no X, fecha o modal de emissão de receita
+        closeReceitaSpan.onclick = function () {
+            closeModal("recipeModal");
+        }
+
+        // Quando o usuário clicar no botão "Voltar para a Ficha", fecha o modal de receita e reabre o modal da ficha do paciente
+        backToPatientFormBtn.onclick = function () {
+            closeModal("recipeModal");
+            openModal("patientFormModal");
+        }
+
+        // Quando o usuário clicar fora de qualquer modal, fecha o modal
+        window.onclick = function (event) {
+            if (event.target == patientFormModal) {
+                closeModal("patientFormModal");
+            } else if (event.target == receitaModal) {
+                closeModal("recipeModal");
             }
         }
     </script>
